@@ -24,7 +24,7 @@ const Contact = () => (
 
         <ScrollReveal direction="up" delay={300}>
             <a
-                href="mailto:zyron@example.com"
+                href="zyronneilbautista10@gmail.com"
                 className="inline-flex items-center justify-center gap-2 px-8 sm:px-10 py-4 sm:py-5 rounded-full bg-neutral-900 dark:bg-white/90 backdrop-blur-xl text-white dark:text-neutral-950 hover:bg-yellow-400 dark:hover:bg-yellow-400 hover:text-neutral-950 hover:shadow-[0_0_30px_rgba(250,204,21,0.3)] font-semibold transition-all hover:scale-105 text-base sm:text-lg shadow-xl"
             >
                 Say Hello <ArrowUpRight size={20} className="sm:w-6 sm:h-6" />
