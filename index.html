@@ -2,14 +2,433 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zyron Neil Bautista - Portfolio</title>
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
-    <div id="root"></div>
-    <script type="module" src="/main.jsx"></script>
+<body class="dark">
+    <div class="app-container">
+        <!-- Background Ambient Glows -->
+        <div class="bg-glow glow-1"></div>
+        <div class="bg-glow glow-2"></div>
+        <div class="bg-glow glow-3"></div>
+
+        <!-- Navbar -->
+        <nav id="navbar">
+            <div class="nav-container">
+                <div class="logo-container">
+                    <div class="logo-box">ZB</div>
+                    <span class="logo-text">Zyron.</span>
+                </div>
+
+                <div class="desktop-menu">
+                    <a href="#home" class="nav-link">Home</a>
+                    <a href="#about" class="nav-link">About</a>
+                    <a href="#projects" class="nav-link">Projects</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                </div>
+
+                <div class="nav-actions">
+                    <button id="theme-toggle" aria-label="Toggle Theme">
+                        <i class="ph ph-moon" id="theme-icon"></i>
+                    </button>
+                    <a href="#contact" class="btn-primary desktop-only">Let's Talk</a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Floating Tab Bar (Mobile) -->
+        <div class="floating-tab-bar">
+            <div class="tab-container">
+                <a href="#home" class="tab-link active" data-target="home">
+                    <div class="tab-bg"></div>
+                    <i class="ph ph-house tab-icon"></i>
+                    <span class="tab-label">Home</span>
+                </a>
+                <a href="#about" class="tab-link" data-target="about">
+                    <div class="tab-bg"></div>
+                    <i class="ph ph-user tab-icon"></i>
+                    <span class="tab-label">About</span>
+                </a>
+                <a href="#projects" class="tab-link" data-target="projects">
+                    <div class="tab-bg"></div>
+                    <i class="ph ph-stack tab-icon"></i>
+                    <span class="tab-label">Projects</span>
+                </a>
+                <a href="#contact" class="tab-link" data-target="contact">
+                    <div class="tab-bg"></div>
+                    <i class="ph ph-envelope tab-icon"></i>
+                    <span class="tab-label">Contact</span>
+                </a>
+            </div>
+        </div>
+
+        <main>
+            <!-- Hero Section -->
+            <section id="home" class="hero-section">
+                <div class="hero-content scroll-reveal up">
+                    <div class="text-column">
+                        <div class="frosted-tag liquid-glass" style="border-radius: 9999px;">
+                            <div class="lg-overlay-bg"></div>
+                            <div class="lg-filter-layer">
+                                <div class="glass-box glass-transparent" data-blur="16" data-cab="1" data-depth="5" data-strength="50"></div>
+                            </div>
+                            <div class="lg-content" style="flex-direction: row; gap: 0.5rem; align-items: center;">
+                                <i class="ph ph-sparkle"></i>
+                                <span>CS Student & Creative Developer</span>
+                            </div>
+                        </div>
+
+                        <h1 class="hero-title">
+                            <span class="line1" id="type-line1"></span><br class="desktop-break">
+                            <span class="line2" id="type-line2"></span><br class="desktop-break">
+                            <span class="line3" id="type-line3"></span>
+                        </h1>
+
+                        <p class="hero-desc">
+                            I specialize in building functional systems while making them visually engaging and
+                            user-friendly. I believe technology should not only work well but also feel good to use.
+                        </p>
+
+                        <div class="hero-buttons">
+                            <a href="#projects" class="btn-primary">
+                                View Projects <i class="ph ph-arrow-up-right"></i>
+                            </a>
+                            <a href="#about" class="btn-secondary">
+                                Learn More
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="image-column">
+                        <div class="image-wrapper group">
+                            <div class="image-glow"></div>
+                            <div class="image-frame liquid-glass" style="border-radius: 3rem;">
+                                <div class="lg-overlay-bg"></div>
+                                <div class="lg-filter-layer">
+                                    <div class="glass-box glass-transparent" data-blur="24" data-cab="2" data-depth="10" data-strength="100"></div>
+                                </div>
+                                <div class="lg-content">
+                                    <div class="image-container">
+                                        <img src="Gemini_Generated_Image_fnpzccfnpzccfnpz_.png" alt="Zyron Neil Bautista">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="floating-badge">
+                                <i class="ph ph-code"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- About Section -->
+            <section id="about" class="about-section">
+                <div class="section-header scroll-reveal up">
+                    <h2>About Me</h2>
+                    <div class="line"></div>
+                </div>
+
+                <div class="bento-grid">
+                    <!-- Intro Box -->
+                    <div class="bento-box intro-box scroll-reveal up liquid-glass">
+                        <div class="lg-overlay-bg"></div>
+                        <div class="lg-filter-layer">
+                            <div class="glass-box glass-transparent" data-blur="24" data-cab="1" data-depth="10" data-strength="100"></div>
+                        </div>
+                        <div class="lg-content">
+                            <h3>Who I Am</h3>
+                            <p>I’m a passionate tech enthusiast pursuing my degree in Computer Science. I enjoy turning
+                                ideas into real, working systems—whether it’s a quiz application, a functional website, or a
+                                creative layout.</p>
+                            <p>Outside coding, I’m someone who enjoys creativity, aesthetics, and storytelling. My ultimate
+                                goal is to become a software engineer and continue creating systems that make an impact.</p>
+                        </div>
+                    </div>
+
+                    <!-- What I Do Box -->
+                    <div class="bento-box what-i-do-box scroll-reveal up liquid-glass" style="transition-delay: 100ms;">
+                        <div class="lg-overlay-bg"></div>
+                        <div class="lg-filter-layer">
+                            <div class="glass-box glass-transparent" data-blur="24" data-cab="1" data-depth="10" data-strength="100"></div>
+                        </div>
+                        <div class="lg-content">
+                            <h3>What I Do</h3>
+                            <ul>
+                                <li>
+                                    <div class="icon-box"><i class="ph ph-code"></i></div>
+                                    <span>Develop web systems</span>
+                                </li>
+                                <li>
+                                    <div class="icon-box"><i class="ph ph-palette"></i></div>
+                                    <span>Create visual layouts</span>
+                                </li>
+                                <li>
+                                    <div class="icon-box"><i class="ph ph-terminal"></i></div>
+                                    <span>Solve logic problems</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Skills Box -->
+                    <div class="bento-box skills-box full-width scroll-reveal up liquid-glass" style="transition-delay: 200ms;">
+                        <div class="lg-overlay-bg"></div>
+                        <div class="lg-filter-layer">
+                            <div class="glass-box glass-transparent" data-blur="24" data-cab="1" data-depth="10" data-strength="100"></div>
+                        </div>
+                        <div class="lg-content">
+                            <h3>Technical Arsenal</h3>
+                            <div class="skills-grid">
+                            <div class="skill-category">
+                                <div class="skill-header">
+                                    <span class="icon-box"><i class="ph ph-terminal"></i></span>
+                                    <h4>Programming</h4>
+                                </div>
+                                <div class="skill-list">
+                                    <span>
+                                        <div class="dot"></div>Java
+                                    </span>
+                                    <span>
+                                        <div class="dot"></div>Python
+                                    </span>
+                                    <span>
+                                        <div class="dot"></div>C++
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="skill-category">
+                                <div class="skill-header">
+                                    <span class="icon-box"><i class="ph ph-monitor"></i></span>
+                                    <h4>Web Development</h4>
+                                </div>
+                                <div class="skill-list">
+                                    <span>
+                                        <div class="dot"></div>HTML
+                                    </span>
+                                    <span>
+                                        <div class="dot"></div>CSS
+                                    </span>
+                                    <span>
+                                        <div class="dot"></div>JavaScript
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="skill-category">
+                                <div class="skill-header">
+                                    <span class="icon-box"><i class="ph ph-code"></i></span>
+                                    <h4>Tools</h4>
+                                </div>
+                                <div class="skill-list">
+                                    <span>
+                                        <div class="dot"></div>phpMyAdmin
+                                    </span>
+                                    <span>
+                                        <div class="dot"></div>VS Code
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="skill-category">
+                                <div class="skill-header">
+                                    <span class="icon-box"><i class="ph ph-palette"></i></span>
+                                    <h4>Design</h4>
+                                </div>
+                                <div class="skill-list">
+                                    <span>
+                                        <div class="dot"></div>Layouting
+                                    </span>
+                                    <span>
+                                        <div class="dot"></div>Pubmats
+                                    </span>
+                                    <span>
+                                        <div class="dot"></div>UI Design
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Fun Facts Box -->
+                    <div class="bento-box fun-facts-box full-width scroll-reveal up liquid-glass" style="transition-delay: 300ms;">
+                        <div class="lg-overlay-bg"></div>
+                        <div class="lg-filter-layer">
+                            <div class="glass-box glass-transparent" data-blur="24" data-cab="1" data-depth="10" data-strength="100"></div>
+                        </div>
+                        <div class="lg-content">
+                            <h3>Behind the Code</h3>
+                            <div class="facts-container">
+                            <div class="fact-pill">
+                                <i class="ph ph-coffee"></i>
+                                <span>Loves coffee & chill coding</span>
+                            </div>
+                            <div class="fact-pill">
+                                <i class="ph ph-game-controller"></i>
+                                <span>Plays Minecraft</span>
+                            </div>
+                            <div class="fact-pill">
+                                <i class="ph ph-film-strip"></i>
+                                <span>Enjoys movies, anime & BL</span>
+                            </div>
+                            <div class="fact-pill">
+                                <i class="ph ph-music-notes"></i>
+                                <span>Detail-oriented</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Projects Section -->
+            <section id="projects" class="projects-section">
+                <div class="section-header scroll-reveal up">
+                    <h2>Selected Work</h2>
+                    <div class="line"></div>
+                </div>
+
+                <div class="projects-grid">
+                    <!-- Project 1 -->
+                    <div class="project-card scroll-reveal up">
+                        <div class="card-content liquid-glass">
+                            <div class="lg-overlay-bg"></div>
+                            <div class="lg-filter-layer">
+                                <div class="glass-box glass-transparent" data-blur="24" data-cab="1" data-depth="10" data-strength="100"></div>
+                            </div>
+                            <div class="lg-content">
+                                <div class="card-header">
+                                    <div class="project-badge yellow">Project 1</div>
+                                    <div class="project-links">
+                                        <a href="#" class="icon-link"><i class="ph ph-github-logo"></i></a>
+                                        <a href="#" class="icon-link"><i class="ph ph-arrow-up-right"></i></a>
+                                    </div>
+                                </div>
+                                <h3 class="project-title">BNHS Online Quiz Website</h3>
+                                <p class="project-desc">A comprehensive system featuring admin and student portals, complete
+                                    with quiz management, results tracking, and a built-in feedback system.</p>
+                                <div class="project-tech">
+                                    <span class="tech-tag">Web Dev</span>
+                                    <span class="tech-tag">phpMyAdmin</span>
+                                    <span class="tech-tag">Logic Design</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="project-card scroll-reveal up" style="transition-delay: 150ms;">
+                        <div class="card-content liquid-glass">
+                            <div class="lg-overlay-bg"></div>
+                            <div class="lg-filter-layer">
+                                <div class="glass-box glass-transparent" data-blur="24" data-cab="1" data-depth="10" data-strength="100"></div>
+                            </div>
+                            <div class="lg-content">
+                                <div class="card-header">
+                                    <div class="project-badge neutral">Project 2</div>
+                                    <div class="project-links">
+                                        <a href="#" class="icon-link"><i class="ph ph-github-logo"></i></a>
+                                        <a href="#" class="icon-link"><i class="ph ph-arrow-up-right"></i></a>
+                                    </div>
+                                </div>
+                                <h3 class="project-title">School Platform</h3>
+                                <p class="project-desc">Designed and developed a fully functional school website tailored
+                                    for seamless user experience and accessibility.</p>
+                                <div class="project-tech">
+                                    <span class="tech-tag">HTML</span>
+                                    <span class="tech-tag">CSS</span>
+                                    <span class="tech-tag">JS</span>
+                                    <span class="tech-tag">UI/UX</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 3 -->
+                    <div class="project-card scroll-reveal up" style="transition-delay: 300ms;">
+                        <div class="card-content liquid-glass">
+                            <div class="lg-overlay-bg"></div>
+                            <div class="lg-filter-layer">
+                                <div class="glass-box glass-transparent" data-blur="24" data-cab="1" data-depth="10" data-strength="100"></div>
+                            </div>
+                            <div class="lg-content">
+                                <div class="card-header">
+                                    <div class="project-badge neutral">Project 3</div>
+                                    <div class="project-links">
+                                        <a href="#" class="icon-link"><i class="ph ph-github-logo"></i></a>
+                                        <a href="#" class="icon-link"><i class="ph ph-arrow-up-right"></i></a>
+                                    </div>
+                                </div>
+                                <h3 class="project-title">Nephricarn Business</h3>
+                                <p class="project-desc">A student-led business project selling burgers and beverages,
+                                    featuring cohesive branding and promotional layout designs.</p>
+                                <div class="project-tech">
+                                    <span class="tech-tag">Layouting</span>
+                                    <span class="tech-tag">Pubmats</span>
+                                    <span class="tech-tag">Branding</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section id="contact" class="contact-section">
+                <div class="contact-icon-wrapper scroll-reveal scale">
+                    <i class="ph ph-envelope"></i>
+                </div>
+
+                <h2 class="contact-title scroll-reveal up" style="transition-delay: 100ms;">
+                    Let's build something <span class="highlight">great.</span>
+                </h2>
+
+                <p class="contact-desc scroll-reveal up" style="transition-delay: 200ms;">
+                    I’m always open to learning new things, collaborating, and building projects that make an impact.
+                    Let's get in touch.
+                </p>
+
+                <div class="scroll-reveal up" style="transition-delay: 300ms;">
+                    <a href="mailto:zyronneilbautista10@gmail.com" class="btn-primary large">
+                        Say Hello <i class="ph ph-arrow-up-right"></i>
+                    </a>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer>
+            <div class="footer-container">
+                <div class="footer-logo">
+                    <div class="logo-box small">ZB</div>
+                    <span>Zyron Neil Bautista</span>
+                </div>
+
+                <p class="footer-text">
+                    © <span id="year"></span> Designed & Developed by Zyron.
+                </p>
+
+                <div class="social-links">
+                    <a href="mailto:zyronneilbautista10@gmail.com" aria-label="Email" class="icon-link"><i
+                            class="ph ph-envelope"></i></a>
+                    <a href="https://www.facebook.com/share/18ZFsaeo4S/" aria-label="Facebook" class="icon-link"><i
+                            class="ph ph-facebook-logo"></i></a>
+                    <a href="https://www.instagram.com/zyronnei10/" aria-label="Instagram" class="icon-link"><i
+                            class="ph ph-instagram-logo"></i></a>
+                    <a href="https://www.tiktok.com/@zyron_neil" aria-label="TikTok" class="icon-link"><i
+                            class="ph ph-tiktok-logo"></i></a>
+                    <a href="https://github.com/ZyronNeil2007" target="_blank" rel="noopener noreferrer"
+                        aria-label="GitHub" class="icon-link"><i class="ph ph-github-logo"></i></a>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="script.js"></script>
 </body>
 
 </html>
