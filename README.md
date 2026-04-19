@@ -8,7 +8,7 @@
 
 ## 🔗 Live Site
 
-**[zyron-portfolio-v2](https://github.com/ZyronNeil2007/zyron-portfolio-v2)** — hosted on GitHub Pages 
+**[zyron-portfolio-v2](https://zyronneil2007.github.io/zyron-portfolio-v2/)** — hosted on GitHub Pages 
 
 ---
 
