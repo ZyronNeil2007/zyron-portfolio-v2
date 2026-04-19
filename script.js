@@ -6,7 +6,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const themeIcon = document.getElementById('theme-icon');
     const body = document.body;
 
-    // Check saved theme or system preference
     const savedTheme = localStorage.getItem('theme');
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
@@ -25,7 +24,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Toggle theme
     themeToggleBtn.addEventListener('click', () => {
         if (body.classList.contains('dark')) {
             body.classList.remove('dark');
@@ -42,15 +40,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const line1 = "Hi, I'm Zyron ";
     const line2 = "I blend code with ";
     const line3 = "design.";
-    
+
     const elLine1 = document.getElementById('type-line1');
     const elLine2 = document.getElementById('type-line2');
     const elLine3 = document.getElementById('type-line3');
-    
+
     let charCount = 0;
     const totalChars = line1.length + line2.length + line3.length;
-    
-    // Setup Cursor Element
+
     function createCursor(blinking) {
         const cursor = document.createElement('span');
         cursor.className = `typing-cursor ${blinking ? 'blinking' : ''}`;
@@ -60,96 +57,89 @@ document.addEventListener('DOMContentLoaded', () => {
     function typeWriter() {
         if (charCount <= line1.length) {
             elLine1.textContent = line1.substring(0, charCount);
-            elLine1.innerHTML += createCursor(charCount === 0 || charCount === line1.length).outerHTML;
+            elLine1.appendChild(createCursor(charCount === 0 || charCount === line1.length));
             elLine2.innerHTML = '';
             elLine3.innerHTML = '';
         } else if (charCount <= line1.length + line2.length) {
             elLine1.textContent = line1;
             elLine2.textContent = line2.substring(0, charCount - line1.length);
-            elLine2.innerHTML += createCursor(charCount === line1.length + line2.length).outerHTML;
+            elLine2.appendChild(createCursor(charCount === line1.length + line2.length));
             elLine3.innerHTML = '';
         } else if (charCount <= totalChars) {
             elLine1.textContent = line1;
             elLine2.textContent = line2;
             elLine3.textContent = line3.substring(0, charCount - line1.length - line2.length);
-            elLine3.innerHTML += createCursor(charCount === totalChars).outerHTML;
+            elLine3.appendChild(createCursor(charCount === totalChars));
         }
 
         if (charCount < totalChars) {
             charCount++;
-            setTimeout(typeWriter, 50); // Typing speed
+            setTimeout(typeWriter, 50);
         }
     }
 
-    // Start typing after initial delay
     setTimeout(() => {
         charCount = 1;
         typeWriter();
     }, 800);
 
-    // --- 3. Scroll Reveal ---
+    // --- 3. Scroll Reveal (IntersectionObserver — zero scroll cost) ---
     const revealElements = document.querySelectorAll('.scroll-reveal');
-    
-    const revealOptions = {
-        threshold: 0.1,
-        rootMargin: "0px 0px -50px 0px"
-    };
 
-    const revealObserver = new IntersectionObserver(function(entries, observer) {
+    const revealObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
-            if (!entry.isIntersecting) {
-                return;
-            }
+            if (!entry.isIntersecting) return;
             entry.target.classList.add('visible');
             observer.unobserve(entry.target);
         });
-    }, revealOptions);
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 
-    revealElements.forEach(el => {
-        revealObserver.observe(el);
-    });
+    revealElements.forEach(el => revealObserver.observe(el));
 
-    // --- 4. Scroll Spy & Navbar ---
+    // --- 4. Scroll Spy & Navbar (throttled with rAF) ---
     const navbar = document.getElementById('navbar');
     const tabLinks = document.querySelectorAll('.tab-link');
-    const sections = ['home', 'about', 'projects', 'contact'];
+    const sectionIds = ['home', 'about', 'projects', 'contact'];
+    // Cache section elements once
+    const sectionEls = sectionIds.map(id => document.getElementById(id));
+
+    let scrollRAF = null;
+    let lastScrollY = -1;
 
     function handleScroll() {
-        // Navbar styling on scroll
-        if (window.scrollY > 50) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
-        }
+        const scrollY = window.scrollY;
 
-        // Active tab detection
+        // Navbar scrolled class
+        navbar.classList.toggle('scrolled', scrollY > 50);
+
+        // Active section detection — read only, no writes in loop
         let currentSection = 'home';
-        
-        for (const sectionId of sections) {
-            const section = document.getElementById(sectionId);
-            if (section) {
-                const rect = section.getBoundingClientRect();
-                if (rect.top <= window.innerHeight / 2) {
-                    currentSection = sectionId;
-                }
+        const half = window.innerHeight / 2;
+        for (let i = 0; i < sectionEls.length; i++) {
+            if (sectionEls[i] && sectionEls[i].getBoundingClientRect().top <= half) {
+                currentSection = sectionIds[i];
             }
         }
 
         tabLinks.forEach(link => {
-            if (link.getAttribute('data-target') === currentSection) {
-                link.classList.add('active');
-            } else {
-                link.classList.remove('active');
-            }
+            link.classList.toggle('active', link.getAttribute('data-target') === currentSection);
         });
+
+        lastScrollY = scrollY;
+        scrollRAF = null;
     }
 
-    window.addEventListener('scroll', handleScroll);
-    handleScroll(); // Init on load
+    // Passive + rAF-throttled scroll listener
+    window.addEventListener('scroll', () => {
+        if (!scrollRAF) {
+            scrollRAF = requestAnimationFrame(handleScroll);
+        }
+    }, { passive: true });
 
-    // Add click listener for floating tabs to handle active state immediately
+    handleScroll();
+
     tabLinks.forEach(link => {
-        link.addEventListener('click', function() {
+        link.addEventListener('click', function () {
             tabLinks.forEach(l => l.classList.remove('active'));
             this.classList.add('active');
         });
@@ -158,8 +148,13 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- 5. Footer Year ---
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // --- 6. Liquid Glass Integration ---
+    // --- 6. Liquid Glass Integration (cached SVGs, no scroll redraws) ---
+    const svgCache = new Map();
+
     const getDisplacementMap = (height, width, radius, depth) => {
+        const key = `map-${height}-${width}-${radius}-${depth}`;
+        if (svgCache.has(key)) return svgCache.get(key);
+
         const svg = `<svg height="${height}" width="${width}" viewBox="0 0 ${width} ${height}" xmlns="http://www.w3.org/2000/svg">
             <style>.mix { mix-blend-mode: screen; }</style>
             <defs>
@@ -180,10 +175,15 @@ document.addEventListener('DOMContentLoaded', () => {
               <rect x="${depth}" y="${depth}" height="${height - 2 * depth}" width="${width - 2 * depth}" fill="#808080" rx="${radius}" ry="${radius}" filter="blur(${depth}px)" />
             </g>
         </svg>`;
-        return "data:image/svg+xml;utf8," + encodeURIComponent(svg);
+        const result = "data:image/svg+xml;utf8," + encodeURIComponent(svg);
+        svgCache.set(key, result);
+        return result;
     };
 
     const getDisplacementFilter = (height, width, radius, depth, strength = 100, chromaticAberration = 0) => {
+        const key = `filter-${height}-${width}-${radius}-${depth}-${strength}-${chromaticAberration}`;
+        if (svgCache.has(key)) return svgCache.get(key);
+
         const svg = `<svg height="${height}" width="${width}" viewBox="0 0 ${width} ${height}" xmlns="http://www.w3.org/2000/svg">
             <defs>
                 <filter id="displace" color-interpolation-filters="sRGB">
@@ -199,7 +199,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 </filter>
             </defs>
         </svg>`;
-        return "data:image/svg+xml;utf8," + encodeURIComponent(svg) + "#displace";
+        const result = "data:image/svg+xml;utf8," + encodeURIComponent(svg) + "#displace";
+        svgCache.set(key, result);
+        return result;
     };
 
     const supportsBackdropFilterUrl = (() => {
@@ -210,12 +212,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function redrawGlass(glass) {
         const liquidGlass = glass.querySelector(".glass-box");
-        const content = glass.querySelector(".lg-content");
-        if (!liquidGlass || !content) return;
+        if (!liquidGlass) return;
 
         const rect = glass.getBoundingClientRect();
         const width = Math.round(rect.width);
         const height = Math.round(rect.height);
+        if (width === 0 || height === 0) return;
+
+        // Skip if size hasn't changed
+        const prevW = parseInt(liquidGlass.dataset.prevW || 0);
+        const prevH = parseInt(liquidGlass.dataset.prevH || 0);
+        if (prevW === width && prevH === height) return;
+        liquidGlass.dataset.prevW = width;
+        liquidGlass.dataset.prevH = height;
 
         const blur = parseFloat(liquidGlass.dataset.blur || "0");
         const chromaticAberration = parseFloat(liquidGlass.dataset.cab || "0");
@@ -223,7 +232,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const strength = parseFloat(liquidGlass.dataset.strength || "100");
         const saturate = parseFloat(liquidGlass.dataset.saturate || "1.5");
         const brightness = parseFloat(liquidGlass.dataset.brightness || "1.1");
-        
+
         const computedStyle = window.getComputedStyle(glass);
         let radius = parseFloat(computedStyle.borderRadius || "0");
         if (isNaN(radius)) radius = 0;
@@ -239,8 +248,9 @@ document.addEventListener('DOMContentLoaded', () => {
         if (supportsBackdropFilterUrl) {
             liquidGlass.style.backdropFilter = `blur(${blur / 2}px) url('${getDisplacementFilter(height, width, radius, depth, strength, chromaticAberration)}') blur(${blur}px) brightness(${brightness}) saturate(${saturate})`;
         } else {
-            liquidGlass.style.webkitBackdropFilter = `blur(${width / 10}px) saturate(180%)`;
-            liquidGlass.style.backdropFilter = `blur(${width / 10}px) saturate(180%)`;
+            const blurVal = `blur(${width / 10}px) saturate(180%)`;
+            liquidGlass.style.webkitBackdropFilter = blurVal;
+            liquidGlass.style.backdropFilter = blurVal;
         }
     }
 
@@ -248,20 +258,21 @@ document.addEventListener('DOMContentLoaded', () => {
         const glassElements = document.querySelectorAll(".liquid-glass");
         if (glassElements.length === 0) return;
 
-        const resizeObserver = new ResizeObserver((entries) => {
-            entries.forEach(entry => {
-                redrawGlass(entry.target);
-            });
-        });
-
-        glassElements.forEach((glass) => {
-            redrawGlass(glass);
-            resizeObserver.observe(glass);
-            
+        // Add will-change hint so browser promotes to compositor layer
+        glassElements.forEach(glass => {
+            glass.style.willChange = 'transform';
             if (!supportsBackdropFilterUrl) {
                 glass.style.boxShadow = "0px 0px 1px var(--border-color)";
             }
+            redrawGlass(glass);
         });
+
+        // Only redraw on resize, not on scroll
+        const resizeObserver = new ResizeObserver(entries => {
+            entries.forEach(entry => redrawGlass(entry.target));
+        });
+
+        glassElements.forEach(glass => resizeObserver.observe(glass));
     }
 
     initLiquidGlass();
