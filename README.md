@@ -16,11 +16,17 @@
 
 - **Hero Section** — Animated typewriter effect with a profile image and call-to-action buttons
 - **About Section** — Bento-grid layout with an intro, skills, what I do, and fun facts
-- **Projects Section** — Card-based project showcase with tech tags and links
+- **Journey Timeline** — An interactive, scrolling timeline outlining my path from 2019 to Present
+- **Skills Progress Bars** — Animated skill level indicators tracking technical proficiency
+- **Projects Section** — Card-based project showcase with tech tags and a category **filtering system**
+- **Visual Design Gallery** — A CSS Masonry grid for pubmats and layouts with an integrated **lightbox**
+- **Case Study Modals** — Clickable project cards that open detailed, frosted-glass modals
 - **Contact Section** — Simple, focused call-to-action with email link
 - **Theme Toggle** — Light/Dark mode with preference persistence via `localStorage`
-- **Liquid Glass Effect** — Custom SVG displacement filter for a premium glass UI
+- **Liquid/Fake Glass Effect** — Custom CSS/SVG techniques for a premium Apple-style glass UI
 - **Scroll Reveal Animations** — Elements animate in using `IntersectionObserver`
+- **3D Tilt Effect** — Vanilla JS mouse-tracking perspective transforms on bento boxes and project cards
+- **Matter.js Easter Egg** — A hidden anti-gravity physics simulation (click the logo 3 times to trigger!)
 - **Floating Tab Bar** — Mobile-friendly bottom navigation
 - **Fully Responsive** — Adapts to mobile, tablet, and desktop viewports
 
@@ -33,10 +39,11 @@
 | Structure | HTML5 (semantic) |
 | Styling | Vanilla CSS (custom properties, CSS Grid, Flexbox) |
 | Logic | Vanilla JavaScript (ES6+) |
+| Physics | [Matter.js](https://brm.io/matter-js/) (CDN) |
 | Icons | [Phosphor Icons](https://phosphoricons.com/) |
 | Fonts | [Inter — Google Fonts](https://fonts.google.com/specimen/Inter) |
 
-> No frameworks. No dependencies. No build tools. Just clean, lightweight vanilla web tech.
+> No complex frameworks. No build tools. Built with clean, lightweight vanilla web tech.
 
 ---
 
@@ -59,7 +66,9 @@ my-portfolio/
 - **Bento Grid Layout** for the About section
 - **Liquid Glass UI** — a custom SVG `feDisplacementMap` + `backdrop-filter` effect that simulates refraction and chromatic aberration
 - **Ambient Background Glows** using fixed, blurred radial shapes
+- **Interactive Modals & Lightboxes** integrated directly into the glass UI
 - **Micro-animations** on hover for cards, buttons, and the profile image
+- **Dynamic 3D Tilting** that responds seamlessly to mouse movement
 
 ---
 
@@ -80,7 +89,9 @@ my-portfolio/
 |---|---|
 | **Home** | Hero with typewriter intro and profile image |
 | **About** | Who I am, what I do, technical skills, and fun facts |
-| **Projects** | BNHS Online Quiz Website, School Platform, Nephricarn Business |
+| **My Journey** | A vertical scrolling timeline of my tech & creative eras |
+| **Projects** | Filterable portfolio of selected web systems |
+| **Visual Design** | Masonry gallery of posters, pubmats, and layouts |
 | **Contact** | Email CTA — *"Let's build something great."* |
 
 ---
