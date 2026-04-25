@@ -23,12 +23,13 @@
 - **Case Study Modals** — Clickable project cards that open detailed, frosted-glass modals
 - **Contact Section** — Simple, focused call-to-action with email link
 - **Theme Toggle** — Light/Dark mode with preference persistence via `localStorage`
-- **Liquid/Fake Glass Effect** — Custom CSS/SVG techniques for a premium Apple-style glass UI
-- **Scroll Reveal Animations** — Elements animate in using `IntersectionObserver`
-- **3D Tilt Effect** — Vanilla JS mouse-tracking perspective transforms on bento boxes and project cards
-- **Matter.js Easter Egg** — A hidden anti-gravity physics simulation (click the logo 3 times to trigger!)
-- **Floating Tab Bar** — Mobile-friendly bottom navigation
-- **Fully Responsive** — Adapts to mobile, tablet, and desktop viewports
+- **Liquid Glass 2.0 UI** — High-fidelity Apple-inspired glassmorphism with `backdrop-filter: blur(24px)`, specular edge highlights, and 28px squircle geometry.
+- **Adaptive Theme Glass** — Specialized glass physics for Light Mode (carved/etched look) and Dark Mode (glowing/frosted look).
+- **Scroll Reveal Animations** — Elements animate in using `IntersectionObserver`.
+- **3D Tilt Effect** — Vanilla JS mouse-tracking perspective transforms on bento boxes and project cards.
+- **Matter.js Easter Egg** — A hidden anti-gravity physics simulation (click the logo 3 times to trigger!).
+- **Floating Tab Bar** — Mobile-friendly bottom navigation.
+- **Fully Responsive** — Adapts to mobile, tablet, and desktop viewports.
 
 ---
 
@@ -62,13 +63,12 @@ my-portfolio/
 
 ## 🎨 Design Highlights
 
-- **Dark/Light Mode** with smooth CSS variable transitions
-- **Bento Grid Layout** for the About section
-- **Liquid Glass UI** — a custom SVG `feDisplacementMap` + `backdrop-filter` effect that simulates refraction and chromatic aberration
-- **Ambient Background Glows** using fixed, blurred radial shapes
-- **Interactive Modals & Lightboxes** integrated directly into the glass UI
-- **Micro-animations** on hover for cards, buttons, and the profile image
-- **Dynamic 3D Tilting** that responds seamlessly to mouse movement
+- **Liquid Glass 2.0** — Replaced legacy gradients with high-fidelity backdrop blurs and layered inset box-shadows for realistic specular reflection.
+- **Squircle Geometry** — 28px border-radius applied across all containers for a smooth, premium Apple-like feel.
+- **Theme-Specific Speculars** — Light mode features a "carved" dark specular highlight, while dark mode uses a vibrant white light-catch.
+- **Universal Glass System** — Cohesive styling applied to bento boxes, buttons, pills, tags, and even media screenshots.
+- **Ambient Background Glows** — Fixed, blurred radial shapes that shift based on the current theme.
+- **Dynamic 3D Tilting** — Interactive perspective transforms that respond seamlessly to mouse movement.
 
 ---
 

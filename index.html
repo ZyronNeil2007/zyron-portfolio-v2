@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Neil's Portfolio</title>
     <meta name="description"
-        content="Portfolio of Zyron Neil Bautista — CS student and creative developer specializing in web systems and visual design.">
+        content="Portfolio of Zyron Neil Bautista â€” CS student and creative developer specializing in web systems and visual design.">
     <!-- Phosphor Icons -->
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
     <!-- Google Fonts -->
@@ -24,8 +24,11 @@
         <div class="bg-glow glow-2"></div>
         <div class="bg-glow glow-3"></div>
 
+        <!-- Fading Blur Backdrop for Top Navbar -->
+        <div class="top-nav-backdrop"></div>
+
         <!-- Navbar -->
-        <nav id="navbar">
+        <nav id="navbar" class="liquid-glass">
             <div class="nav-container">
                 <div class="logo-container">
                     <img src="bronze-Photoroom.png" alt="Zyron Logo" class="logo-img">
@@ -40,37 +43,39 @@
                 </div>
 
                 <div class="nav-actions">
-                    <button id="theme-toggle" aria-label="Toggle Theme">
+                    <button id="theme-toggle" class="liquid-glass" aria-label="Toggle Theme">
                         <i class="ph ph-moon" id="theme-icon"></i>
                     </button>
-                    <a href="#contact" class="btn-primary desktop-only">Let's Talk</a>
+                    <a href="#contact" class="btn-primary desktop-only liquid-glass">Let's Talk</a>
                 </div>
             </div>
         </nav>
 
-        <!-- Floating Tab Bar (Mobile) -->
-        <div class="floating-tab-bar">
-            <div class="tab-container">
-                <a href="#home" class="tab-link active" data-target="home">
-                    <div class="tab-bg"></div>
-                    <i class="ph ph-house tab-icon"></i>
-                    <span class="tab-label">Home</span>
-                </a>
-                <a href="#about" class="tab-link" data-target="about">
-                    <div class="tab-bg"></div>
-                    <i class="ph ph-user tab-icon"></i>
-                    <span class="tab-label">About</span>
-                </a>
-                <a href="#projects" class="tab-link" data-target="projects">
-                    <div class="tab-bg"></div>
-                    <i class="ph ph-stack tab-icon"></i>
-                    <span class="tab-label">Projects</span>
-                </a>
-                <a href="#contact" class="tab-link" data-target="contact">
-                    <div class="tab-bg"></div>
-                    <i class="ph ph-envelope tab-icon"></i>
-                    <span class="tab-label">Contact</span>
-                </a>
+        <!-- Apple News+ Floating Bottom Nav (Mobile) -->
+        <div class="apple-nav-wrapper">
+            <div class="bottom-nav-backdrop"></div>
+            <div class="apple-bottom-nav">
+                <div class="nav-pill liquid-glass">
+                    <a href="#home" class="apple-nav-link active" data-target="home">
+                        <i class="ph ph-house"></i>
+                        <span>Home</span>
+                    </a>
+                    <a href="#about" class="apple-nav-link" data-target="about">
+                        <i class="ph ph-user"></i>
+                        <span>About</span>
+                    </a>
+                    <a href="#projects" class="apple-nav-link" data-target="projects">
+                        <i class="ph ph-stack"></i>
+                        <span>Projects</span>
+                    </a>
+                    <a href="#contact" class="apple-nav-link" data-target="contact">
+                        <i class="ph ph-envelope"></i>
+                        <span>Contact</span>
+                    </a>
+                </div>
+                <button class="nav-fab liquid-glass" aria-label="Search">
+                    <i class="ph ph-magnifying-glass"></i>
+                </button>
             </div>
         </div>
 
@@ -79,7 +84,7 @@
             <section id="home" class="hero-section">
                 <div class="hero-content scroll-reveal up">
                     <div class="text-column">
-                        <div class="frosted-tag fake-glass">
+                        <div class="frosted-tag liquid-glass">
                             <i class="ph ph-sparkle"></i>
                             <span>CS Student &amp; Creative Developer</span>
                         </div>
@@ -96,10 +101,10 @@
                         </p>
 
                         <div class="hero-buttons">
-                            <a href="#projects" class="btn-primary">
+                            <a href="#projects" class="btn-primary liquid-glass">
                                 View Projects <i class="ph ph-arrow-up-right"></i>
                             </a>
-                            <a href="#about" class="btn-secondary">
+                            <a href="#about" class="btn-secondary liquid-glass">
                                 Learn More
                             </a>
                         </div>
@@ -108,7 +113,7 @@
                     <div class="image-column">
                         <div class="image-wrapper group">
                             <div class="image-glow"></div>
-                            <div class="image-frame fake-glass">
+                            <div class="image-frame liquid-glass">
                                 <div class="image-container">
                                     <img src="Gemini_Generated_Image_fnpzccfnpzccfnpz_.png" alt="Zyron Neil Bautista">
                                 </div>
@@ -130,10 +135,10 @@
 
                 <div class="bento-grid">
                     <!-- Intro Box -->
-                    <div class="bento-box intro-box scroll-reveal up fake-glass">
+                    <div class="bento-box intro-box scroll-reveal up liquid-glass">
                         <h3>Who I Am</h3>
                         <p>I'm a passionate tech enthusiast pursuing my degree in Computer Science. I enjoy turning
-                            ideas into real, working systems—whether it's a quiz application, a functional website,
+                            ideas into real, working systemsâ€”whether it's a quiz application, a functional website,
                             or a creative layout.</p>
                         <p>Outside coding, I'm someone who enjoys creativity, aesthetics, and storytelling. My
                             ultimate goal is to become a software engineer and continue creating systems that make an
@@ -142,32 +147,32 @@
                     </div>
 
                     <!-- What I Do Box -->
-                    <div class="bento-box what-i-do-box scroll-reveal up fake-glass" style="transition-delay: 100ms;">
+                    <div class="bento-box what-i-do-box scroll-reveal up liquid-glass" style="transition-delay: 100ms;">
                         <h3>What I Do</h3>
                         <ul>
                             <li>
-                                <div class="icon-box"><i class="ph ph-code"></i></div>
+                                <div class="icon-box liquid-glass"><i class="ph ph-code"></i></div>
                                 <span>Develop web systems</span>
                             </li>
                             <li>
-                                <div class="icon-box"><i class="ph ph-palette"></i></div>
+                                <div class="icon-box liquid-glass"><i class="ph ph-palette"></i></div>
                                 <span>Create visual layouts</span>
                             </li>
                             <li>
-                                <div class="icon-box"><i class="ph ph-terminal"></i></div>
+                                <div class="icon-box liquid-glass"><i class="ph ph-terminal"></i></div>
                                 <span>Solve logic problems</span>
                             </li>
                         </ul>
                     </div>
 
                     <!-- Skills Box -->
-                    <div class="bento-box skills-box full-width scroll-reveal up fake-glass"
+                    <div class="bento-box skills-box full-width scroll-reveal up liquid-glass"
                         style="transition-delay: 200ms;">
                         <h3>Technical Arsenal</h3>
                         <div class="skills-grid">
-                            <div class="skill-category">
+                            <div class="skill-category liquid-glass">
                                 <div class="skill-header">
-                                    <span class="icon-box"><i class="ph ph-terminal"></i></span>
+                                    <span class="icon-box liquid-glass"><i class="ph ph-terminal"></i></span>
                                     <h4>Programming</h4>
                                 </div>
                                 <div class="skill-list">
@@ -203,9 +208,9 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="skill-category">
+                            <div class="skill-category liquid-glass">
                                 <div class="skill-header">
-                                    <span class="icon-box"><i class="ph ph-monitor"></i></span>
+                                    <span class="icon-box liquid-glass"><i class="ph ph-monitor"></i></span>
                                     <h4>Web Development</h4>
                                 </div>
                                 <div class="skill-list">
@@ -241,9 +246,9 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="skill-category">
+                            <div class="skill-category liquid-glass">
                                 <div class="skill-header">
-                                    <span class="icon-box"><i class="ph ph-code"></i></span>
+                                    <span class="icon-box liquid-glass"><i class="ph ph-code"></i></span>
                                     <h4>Tools</h4>
                                 </div>
                                 <div class="skill-list">
@@ -269,9 +274,9 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="skill-category">
+                            <div class="skill-category liquid-glass">
                                 <div class="skill-header">
-                                    <span class="icon-box"><i class="ph ph-palette"></i></span>
+                                    <span class="icon-box liquid-glass"><i class="ph ph-palette"></i></span>
                                     <h4>Design</h4>
                                 </div>
                                 <div class="skill-list">
@@ -311,23 +316,23 @@
                     </div>
 
                     <!-- Fun Facts Box -->
-                    <div class="bento-box fun-facts-box full-width scroll-reveal up fake-glass"
+                    <div class="bento-box fun-facts-box full-width scroll-reveal up liquid-glass"
                         style="transition-delay: 300ms;">
                         <h3>Behind the Code</h3>
                         <div class="facts-container">
-                            <div class="fact-pill">
+                            <div class="fact-pill liquid-glass">
                                 <i class="ph ph-coffee"></i>
                                 <span>Loves coffee &amp; chill coding</span>
                             </div>
-                            <div class="fact-pill">
+                            <div class="fact-pill liquid-glass">
                                 <i class="ph ph-game-controller"></i>
                                 <span>Plays Minecraft</span>
                             </div>
-                            <div class="fact-pill">
+                            <div class="fact-pill liquid-glass">
                                 <i class="ph ph-film-strip"></i>
                                 <span>Enjoys movies, anime &amp; BL</span>
                             </div>
-                            <div class="fact-pill">
+                            <div class="fact-pill liquid-glass">
                                 <i class="ph ph-music-notes"></i>
                                 <span>Detail-oriented</span>
                             </div>
@@ -344,7 +349,7 @@
                 </div>
 
                 <div class="journey-intro scroll-reveal up" style="transition-delay:80ms;">
-                    <div class="journey-eyebrow">
+                    <div class="journey-eyebrow liquid-glass">
                         <span class="journey-star">🌟</span>
                         <span>From Passion to Profession</span>
                     </div>
@@ -360,20 +365,20 @@
                         <div class="tl-dot">
                             <span class="tl-dot-inner"></span>
                         </div>
-                        <div class="tl-card fake-glass">
-                            <div class="tl-year-badge accent">🔥 2026 — Present</div>
+                        <div class="tl-card liquid-glass">
+                            <div class="tl-year-badge accent liquid-glass">2026 - Present</div>
                             <h3 class="tl-title">Dream in Progress</h3>
                             <p class="tl-body">Now, as a Computer Science student, I'm finally pursuing what I truly
                                 love. I'm working with <strong>Python</strong> and data mining, along with <strong>Java
                                     (OOP)</strong> and web development using <strong>HTML and CSS</strong>. Everything
-                                I've learned — from creativity to coding — is coming together. Becoming a software
-                                engineer, web developer, and app developer is no longer just a dream — it's something
+                                I've learned â€” from creativity to coding â€” is coming together. Becoming a software
+                                engineer, web developer, and app developer is no longer just a dream â€” it's something
                                 I'm actively building every day.</p>
                             <div class="tl-tags">
-                                <span class="tl-tag">Python</span>
-                                <span class="tl-tag">Java OOP</span>
-                                <span class="tl-tag">Web Dev</span>
-                                <span class="tl-tag">Data Mining</span>
+                                <span class="tl-tag liquid-glass">Python</span>
+                                <span class="tl-tag liquid-glass">Java OOP</span>
+                                <span class="tl-tag liquid-glass">Web Dev</span>
+                                <span class="tl-tag liquid-glass">Data Mining</span>
                             </div>
                         </div>
                     </div>
@@ -383,8 +388,8 @@
                         <div class="tl-dot">
                             <span class="tl-dot-inner"></span>
                         </div>
-                        <div class="tl-card fake-glass">
-                            <div class="tl-year-badge">🧠 2025</div>
+                        <div class="tl-card liquid-glass">
+                            <div class="tl-year-badge liquid-glass">2025</div>
                             <h3 class="tl-title">Expanding Technical Skills</h3>
                             <p class="tl-body">I explored Computer Engineering concepts and worked with
                                 <strong>C++</strong>, which I really enjoyed as it deepened my understanding of
@@ -392,9 +397,9 @@
                                 Calculus 1), but it helped me grow discipline and problem-solving skills.
                             </p>
                             <div class="tl-tags">
-                                <span class="tl-tag">C++</span>
-                                <span class="tl-tag">Computer Engineering</span>
-                                <span class="tl-tag">Problem Solving</span>
+                                <span class="tl-tag liquid-glass">C++</span>
+                                <span class="tl-tag liquid-glass">Computer Engineering</span>
+                                <span class="tl-tag liquid-glass">Problem Solving</span>
                             </div>
                         </div>
                     </div>
@@ -404,18 +409,18 @@
                         <div class="tl-dot">
                             <span class="tl-dot-inner"></span>
                         </div>
-                        <div class="tl-card fake-glass">
-                            <div class="tl-year-badge">💻 2024</div>
+                        <div class="tl-card liquid-glass">
+                            <div class="tl-year-badge liquid-glass">2024</div>
                             <h3 class="tl-title">Real-World Developer Era</h3>
                             <p class="tl-body">I went deeper into <strong>.NET Programming NC III</strong>, working with
                                 HTML, CSS, JavaScript, GitHub, and databases. We developed multiple web-based systems
                                 that were actually implemented at Barucboc National High School, giving me real-world
                                 experience in building applications used by actual users.</p>
                             <div class="tl-tags">
-                                <span class="tl-tag">.NET NC III</span>
-                                <span class="tl-tag">JavaScript</span>
-                                <span class="tl-tag">GitHub</span>
-                                <span class="tl-tag">Databases</span>
+                                <span class="tl-tag liquid-glass">.NET NC III</span>
+                                <span class="tl-tag liquid-glass">JavaScript</span>
+                                <span class="tl-tag liquid-glass">GitHub</span>
+                                <span class="tl-tag liquid-glass">Databases</span>
                             </div>
                         </div>
                     </div>
@@ -425,19 +430,20 @@
                         <div class="tl-dot">
                             <span class="tl-dot-inner"></span>
                         </div>
-                        <div class="tl-card fake-glass">
-                            <div class="tl-year-badge">🎬💥 2023</div>
+                        <div class="tl-card liquid-glass">
+                            <div class="tl-year-badge liquid-glass">2023</div>
                             <h3 class="tl-title">Peak Creativity & Programming Breakthrough</h3>
                             <p class="tl-body">This was my prime editing era on TikTok, where my content gained strong
                                 engagement. At the same time, during Senior High School, I took <strong>Java Programming
-                                    NC II</strong> and developed multiple systems — realizing how much I enjoy coding. I
+                                    NC II</strong> and developed multiple systems â€” realizing how much I enjoy coding.
+                                I
                                 was also introduced to HTML &amp; CSS, and I instantly loved it because it combined
                                 programming with design. From here, I started self-studying and taking development more
                                 seriously.</p>
                             <div class="tl-tags">
-                                <span class="tl-tag">Java NC II</span>
-                                <span class="tl-tag">HTML &amp; CSS</span>
-                                <span class="tl-tag">TikTok Creator</span>
+                                <span class="tl-tag liquid-glass">Java NC II</span>
+                                <span class="tl-tag liquid-glass">HTML &amp; CSS</span>
+                                <span class="tl-tag liquid-glass">TikTok Creator</span>
                             </div>
                         </div>
                     </div>
@@ -447,36 +453,36 @@
                         <div class="tl-dot">
                             <span class="tl-dot-inner"></span>
                         </div>
-                        <div class="tl-card fake-glass">
-                            <div class="tl-year-badge">🎨 2022</div>
+                        <div class="tl-card liquid-glass">
+                            <div class="tl-year-badge liquid-glass">2022</div>
                             <h3 class="tl-title">Creative Growth</h3>
                             <p class="tl-body">My editing skills improved and I developed my abilities as a
                                 <strong>layout artist</strong>, creating posters and pubmats. I began to understand how
                                 design communicates ideas effectively.
                             </p>
                             <div class="tl-tags">
-                                <span class="tl-tag">Layout Artist</span>
-                                <span class="tl-tag">Pubmats</span>
-                                <span class="tl-tag">Visual Design</span>
+                                <span class="tl-tag liquid-glass">Layout Artist</span>
+                                <span class="tl-tag liquid-glass">Pubmats</span>
+                                <span class="tl-tag liquid-glass">Visual Design</span>
                             </div>
                         </div>
                     </div>
 
-                    <!-- 2020–2021 -->
+                    <!-- 2020 - 2021 -->
                     <div class="timeline-item right scroll-reveal up" style="transition-delay:500ms;">
                         <div class="tl-dot">
                             <span class="tl-dot-inner"></span>
                         </div>
-                        <div class="tl-card fake-glass">
-                            <div class="tl-year-badge">🎬 2020–2021</div>
+                        <div class="tl-card liquid-glass">
+                            <div class="tl-year-badge liquid-glass">2020 - 2021</div>
                             <h3 class="tl-title">Creative Exploration</h3>
                             <p class="tl-body">I started creating <strong>anime edits</strong> using CapCut and Alight
                                 Motion, exploring storytelling through visuals, music, and timing. This is where I built
                                 my foundation in creativity.</p>
                             <div class="tl-tags">
-                                <span class="tl-tag">CapCut</span>
-                                <span class="tl-tag">Alight Motion</span>
-                                <span class="tl-tag">Storytelling</span>
+                                <span class="tl-tag liquid-glass">CapCut</span>
+                                <span class="tl-tag liquid-glass">Alight Motion</span>
+                                <span class="tl-tag liquid-glass">Storytelling</span>
                             </div>
                         </div>
                     </div>
@@ -486,18 +492,18 @@
                         <div class="tl-dot accent-dot">
                             <span class="tl-dot-inner"></span>
                         </div>
-                        <div class="tl-card fake-glass origin-card">
-                            <div class="tl-year-badge accent">🚀 2019 — Where It All Began</div>
+                        <div class="tl-card liquid-glass origin-card">
+                            <div class="tl-year-badge accent liquid-glass">2019 - Where It All Began</div>
                             <h3 class="tl-title">The Spark</h3>
                             <p class="tl-body">My programming journey started with <strong>Minecraft</strong>. Running
                                 servers, configuring plugins, and customizing gameplay sparked my curiosity about how
                                 code works behind the scenes. This was the beginning of everything.</p>
-                            <img src="minecraft_screenshot.jpg" alt="Minecraft Screenshot"
-                                style="width: 100%; border-radius: 0.5rem; margin-bottom: 1rem; border: 1px solid var(--fake-glass-border);">
+                            <img src="minecraft_screenshot.jpg" alt="Minecraft Screenshot" class="liquid-glass"
+                                style="width: 100%; margin-bottom: 1rem;">
                             <div class="tl-tags">
-                                <span class="tl-tag">Minecraft Servers</span>
-                                <span class="tl-tag">Plugins</span>
-                                <span class="tl-tag">Curiosity</span>
+                                <span class="tl-tag liquid-glass">Minecraft Servers</span>
+                                <span class="tl-tag liquid-glass">Plugins</span>
+                                <span class="tl-tag liquid-glass">Curiosity</span>
                             </div>
                         </div>
                     </div>
@@ -512,30 +518,30 @@
                 </div>
 
                 <div class="project-filters scroll-reveal up">
-                    <button class="filter-pill active" data-filter="all">All</button>
-                    <button class="filter-pill" data-filter="web-dev">Web Dev</button>
-                    <button class="filter-pill" data-filter="layout-ui">Layout & UI</button>
-                    <button class="filter-pill" data-filter="logic">Logic/Software</button>
+                    <button class="filter-pill active liquid-glass" data-filter="all">All</button>
+                    <button class="filter-pill liquid-glass" data-filter="web-dev">Web Dev</button>
+                    <button class="filter-pill liquid-glass" data-filter="layout-ui">Layout & UI</button>
+                    <button class="filter-pill liquid-glass" data-filter="logic">Logic/Software</button>
                 </div>
 
                 <div class="projects-grid">
                     <!-- Project 1 -->
                     <div class="project-card scroll-reveal up" data-category="web-dev logic">
-                        <div class="card-content fake-glass">
+                        <div class="card-content liquid-glass">
                             <div class="card-header">
-                                <div class="project-badge yellow">Project 1</div>
+                                <div class="project-badge yellow liquid-glass">Project 1</div>
                                 <div class="project-links">
-                                    <a href="#" class="icon-link"><i class="ph ph-github-logo"></i></a>
-                                    <a href="#" class="icon-link"><i class="ph ph-arrow-up-right"></i></a>
+                                    <a href="#" class="icon-link liquid-glass"><i class="ph ph-github-logo"></i></a>
+                                    <a href="#" class="icon-link liquid-glass"><i class="ph ph-arrow-up-right"></i></a>
                                 </div>
                             </div>
                             <h3 class="project-title">BNHS Online Quiz Website</h3>
                             <p class="project-desc">A comprehensive system featuring admin and student portals,
                                 complete with quiz management, results tracking, and a built-in feedback system.</p>
                             <div class="project-tech">
-                                <span class="tech-tag">Web Dev</span>
-                                <span class="tech-tag">phpMyAdmin</span>
-                                <span class="tech-tag">Logic Design</span>
+                                <span class="tech-tag liquid-glass">Web Dev</span>
+                                <span class="tech-tag liquid-glass">phpMyAdmin</span>
+                                <span class="tech-tag liquid-glass">Logic Design</span>
                             </div>
                         </div>
                     </div>
@@ -543,22 +549,22 @@
                     <!-- Project 2 -->
                     <div class="project-card scroll-reveal up" style="transition-delay: 150ms;"
                         data-category="web-dev layout-ui">
-                        <div class="card-content fake-glass">
+                        <div class="card-content liquid-glass">
                             <div class="card-header">
-                                <div class="project-badge neutral">Project 2</div>
+                                <div class="project-badge neutral liquid-glass">Project 2</div>
                                 <div class="project-links">
-                                    <a href="#" class="icon-link"><i class="ph ph-github-logo"></i></a>
-                                    <a href="#" class="icon-link"><i class="ph ph-arrow-up-right"></i></a>
+                                    <a href="#" class="icon-link liquid-glass"><i class="ph ph-github-logo"></i></a>
+                                    <a href="#" class="icon-link liquid-glass"><i class="ph ph-arrow-up-right"></i></a>
                                 </div>
                             </div>
                             <h3 class="project-title">School Platform</h3>
                             <p class="project-desc">Designed and developed a fully functional school website
                                 tailored for seamless user experience and accessibility.</p>
                             <div class="project-tech">
-                                <span class="tech-tag">HTML</span>
-                                <span class="tech-tag">CSS</span>
-                                <span class="tech-tag">JS</span>
-                                <span class="tech-tag">UI/UX</span>
+                                <span class="tech-tag liquid-glass">HTML</span>
+                                <span class="tech-tag liquid-glass">CSS</span>
+                                <span class="tech-tag liquid-glass">JS</span>
+                                <span class="tech-tag liquid-glass">UI/UX</span>
                             </div>
                         </div>
                     </div>
@@ -566,21 +572,21 @@
                     <!-- Project 3 -->
                     <div class="project-card scroll-reveal up" style="transition-delay: 300ms;"
                         data-category="layout-ui">
-                        <div class="card-content fake-glass">
+                        <div class="card-content liquid-glass">
                             <div class="card-header">
-                                <div class="project-badge neutral">Project 3</div>
+                                <div class="project-badge neutral liquid-glass">Project 3</div>
                                 <div class="project-links">
-                                    <a href="#" class="icon-link"><i class="ph ph-github-logo"></i></a>
-                                    <a href="#" class="icon-link"><i class="ph ph-arrow-up-right"></i></a>
+                                    <a href="#" class="icon-link liquid-glass"><i class="ph ph-github-logo"></i></a>
+                                    <a href="#" class="icon-link liquid-glass"><i class="ph ph-arrow-up-right"></i></a>
                                 </div>
                             </div>
                             <h3 class="project-title">Nephricarn Business</h3>
                             <p class="project-desc">A student-led business project selling burgers and beverages,
                                 featuring cohesive branding and promotional layout designs.</p>
                             <div class="project-tech">
-                                <span class="tech-tag">Layouting</span>
-                                <span class="tech-tag">Pubmats</span>
-                                <span class="tech-tag">Branding</span>
+                                <span class="tech-tag liquid-glass">Layouting</span>
+                                <span class="tech-tag liquid-glass">Pubmats</span>
+                                <span class="tech-tag liquid-glass">Branding</span>
                             </div>
                         </div>
                     </div>
@@ -595,10 +601,10 @@
                 </div>
 
                 <div class="masonry-grid scroll-reveal up">
-                    <div class="masonry-item fake-glass"><img src="placeholder1.jpg" alt="Design 1"></div>
-                    <div class="masonry-item fake-glass"><img src="placeholder2.jpg" alt="Design 2"></div>
-                    <div class="masonry-item fake-glass"><img src="placeholder3.jpg" alt="Design 3"></div>
-                    <div class="masonry-item fake-glass"><img src="placeholder4.jpg" alt="Design 4"></div>
+                    <div class="masonry-item liquid-glass"><img src="placeholder1.jpg" alt="Design 1"></div>
+                    <div class="masonry-item liquid-glass"><img src="placeholder2.jpg" alt="Design 2"></div>
+                    <div class="masonry-item liquid-glass"><img src="placeholder3.jpg" alt="Design 3"></div>
+                    <div class="masonry-item liquid-glass"><img src="placeholder4.jpg" alt="Design 4"></div>
                 </div>
             </section>
 
@@ -634,33 +640,33 @@
                 </div>
 
                 <p class="footer-text">
-                    © <span id="year"></span> Designed &amp; Developed by Zyron Neil.
+                    Â© <span id="year"></span> Designed &amp; Developed by Zyron Neil.
                 </p>
 
                 <div class="social-links">
-                    <a href="mailto:zyronneilbautista10@gmail.com" aria-label="Email" class="icon-link"><i
+                    <a href="mailto:zyronneilbautista10@gmail.com" aria-label="Email" class="icon-link liquid-glass"><i
                             class="ph ph-envelope"></i></a>
-                    <a href="https://www.facebook.com/share/18ZFsaeo4S/" aria-label="Facebook" class="icon-link"><i
-                            class="ph ph-facebook-logo"></i></a>
-                    <a href="https://www.instagram.com/zyronnei10/" aria-label="Instagram" class="icon-link"><i
-                            class="ph ph-instagram-logo"></i></a>
-                    <a href="https://www.tiktok.com/@zyron_neil" aria-label="TikTok" class="icon-link"><i
+                    <a href="https://www.facebook.com/share/18ZFsaeo4S/" aria-label="Facebook"
+                        class="icon-link liquid-glass"><i class="ph ph-facebook-logo"></i></a>
+                    <a href="https://www.instagram.com/zyronnei10/" aria-label="Instagram"
+                        class="icon-link liquid-glass"><i class="ph ph-instagram-logo"></i></a>
+                    <a href="https://www.tiktok.com/@zyron_neil" aria-label="TikTok" class="icon-link liquid-glass"><i
                             class="ph ph-tiktok-logo"></i></a>
                     <a href="https://github.com/ZyronNeil2007" target="_blank" rel="noopener noreferrer"
-                        aria-label="GitHub" class="icon-link"><i class="ph ph-github-logo"></i></a>
+                        aria-label="GitHub" class="icon-link liquid-glass"><i class="ph ph-github-logo"></i></a>
                 </div>
             </div>
         </footer>
         <!-- Lightbox Overlay -->
         <div id="lightbox" class="lightbox-overlay">
-            <button class="lightbox-close"><i class="ph ph-x"></i></button>
+            <button class="lightbox-close liquid-glass"><i class="ph ph-x"></i></button>
             <img id="lightbox-img" src="" alt="Expanded Design">
         </div>
 
         <!-- Project Modal Overlay -->
         <div id="project-modal" class="project-modal-overlay">
-            <div class="project-modal-content fake-glass">
-                <button class="modal-close"><i class="ph ph-x"></i></button>
+            <div class="project-modal-content liquid-glass">
+                <button class="modal-close liquid-glass"><i class="ph ph-x"></i></button>
                 <div class="modal-body">
                     <h3 id="modal-title">Project Title</h3>
                     <div id="modal-tech" class="project-tech"></div>
