@@ -84,9 +84,17 @@
             <section id="home" class="hero-section">
                 <div class="hero-content scroll-reveal up">
                     <div class="text-column">
-                        <div class="frosted-tag liquid-glass">
-                            <i class="ph ph-sparkle"></i>
-                            <span>CS Student &amp; Creative Developer</span>
+                        <div class="hero-tags-container"
+                            style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 2rem;">
+                            <div class="frosted-tag liquid-glass">
+                                <i class="ph ph-code"></i>
+                                <span>CS Student &amp; Creative Developer</span>
+                            </div>
+                            <button id="ai-tagline-btn" class="frosted-tag liquid-glass" style="cursor:pointer;"
+                                title="Generate new taglines with AI">
+                                <i class="ph ph-sparkle"></i>
+                                <span>✨ AI Intro</span>
+                            </button>
                         </div>
 
                         <h1 class="hero-title">
@@ -677,6 +685,24 @@
 
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
+        <!-- Neil's AI Chat Widget -->
+        <div id="ai-chat-widget">
+            <div id="ai-chat-window" class="hidden">
+                <div class="chat-header">
+                    <span>✨ Ask AI about Neil</span>
+                    <button id="close-chat-btn"><i class="ph ph-x"></i></button>
+                </div>
+                <div class="chat-messages" id="chat-messages">
+                </div>
+                <div class="chat-input-area">
+                    <input type="text" id="chat-input" placeholder="What's Neil's tech stack?..." autocomplete="off" />
+                    <button id="send-chat-btn"><i class="ph ph-paper-plane-right"></i></button>
+                </div>
+            </div>
+            <button id="ai-chat-fab" title="Chat with Neil's AI Assistant">
+                <i class="ph ph-sparkle"></i>
+            </button>
+        </div>
     <script src="script.js"></script>
 </body>
 
