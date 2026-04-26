@@ -37,16 +37,16 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // --- 2. Typewriter Effect ---
-    let line1 = "Hi, I'm Zyron ";
-    let line2 = "I blend code with ";
-    let line3 = "design.";
+    const line1 = "Hi, I'm Zyron ";
+    const line2 = "I blend code with ";
+    const line3 = "design.";
 
     const elLine1 = document.getElementById('type-line1');
     const elLine2 = document.getElementById('type-line2');
     const elLine3 = document.getElementById('type-line3');
 
     let charCount = 0;
-    let totalChars = line1.length + line2.length + line3.length;
+    const totalChars = line1.length + line2.length + line3.length;
 
     function createCursor(blinking) {
         const cursor = document.createElement('span');
@@ -463,164 +463,5 @@ document.addEventListener('DOMContentLoaded', () => {
         // Bonus visual feedback
         const bgGlows = document.querySelectorAll('.bg-glow');
         bgGlows.forEach(glow => glow.style.filter = 'hue-rotate(90deg) blur(24px)');
-        }
-
-    // --- ✨ Neil's AI Features (Gemini API) ---
-
-        // ⚠️ Insert your Gemini API key here
-        const apiKey = "YAIzaSyDTc306DoVgfSrl7aJ2z88zKr92JNchZ9A";
-        const geminiEndpoint = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`;
-
-        // Helper to make API calls
-        async function callGemini(payload) {
-            try {
-                const response = await fetch(geminiEndpoint, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(payload)
-                });
-                if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-                return await response.json();
-            } catch (e) {
-                console.error("Gemini API Error:", e);
-                throw e;
-            }
-        }
-
-        // ✨ 1. Magic Tagline Generator
-        const aiTaglineBtn = document.getElementById('ai-tagline-btn');
-        if (aiTaglineBtn) {
-            const aiTaglineIcon = aiTaglineBtn.querySelector('i');
-            aiTaglineBtn.addEventListener('click', async () => {
-                if (aiTaglineBtn.classList.contains('loading')) return;
-
-                // UI Loading state
-                aiTaglineBtn.classList.add('loading');
-                aiTaglineIcon.classList.replace('ph-sparkle', 'ph-spinner-gap');
-                aiTaglineIcon.classList.add('spinning');
-
-                try {
-                    const result = await callGemini({
-                        contents: [{ parts: [{ text: "Generate 3 short, creative punchlines (max 5 words each) for a Computer Science student and web developer's portfolio hero section. Return ONLY a valid JSON array of 3 strings." }] }],
-                        generationConfig: { responseMimeType: "application/json" }
-                    });
-
-                    const text = result.candidates[0].content.parts[0].text;
-                    const lines = JSON.parse(text);
-
-                    if (lines && lines.length >= 3) {
-                        // Update the global line variables
-                        line1 = lines[0] + " ";
-                        line2 = lines[1] + " ";
-                        line3 = lines[2];
-
-                        // Reset and restart the typewriter
-                        totalChars = line1.length + line2.length + line3.length;
-                        charCount = 1;
-                        document.getElementById('type-line1').innerHTML = '';
-                        document.getElementById('type-line2').innerHTML = '';
-                        document.getElementById('type-line3').innerHTML = '';
-                        typeWriter();
-                    }
-                } catch (e) {
-                    console.error("Failed to generate tagline:", e);
-                    alert("AI Tagline generation failed. Check console or API key.");
-                } finally {
-                    // Reset UI
-                    aiTaglineBtn.classList.remove('loading');
-                    aiTaglineIcon.classList.remove('spinning');
-                    aiTaglineIcon.classList.replace('ph-spinner-gap', 'ph-sparkle');
-                }
-            });
-        }
-
-        // ✨ 2. AI Portfolio Assistant Chatbot
-        const chatFab = document.getElementById('ai-chat-fab');
-        const chatWindow = document.getElementById('ai-chat-window');
-        const closeChatBtn = document.getElementById('close-chat-btn');
-        const chatMessages = document.getElementById('chat-messages');
-        const chatInput = document.getElementById('chat-input');
-        const sendChatBtn = document.getElementById('send-chat-btn');
-
-        if (chatFab && chatWindow) {
-            let chatHistory = [];
-
-            // This is the "Brain" of the AI. It tells it who you are.
-            const systemInstruction = "You are an enthusiastic AI assistant on Zyron Neil Bautista's portfolio website. Neil is a CS student and creative developer from Isabela State University - Cabagan Campus, specializing in web systems and visual design. Skills: Java, Python, C++, HTML, CSS, JavaScript. He built the BNHS Online Quiz Website, a School Platform, and loves playing Minecraft, anime (like One Piece), and drinking coffee. Answer questions about Neil. Keep answers concise (1-2 paragraphs max) and formatted neatly. Act as his personal hype-man.";
-
-            function appendMessage(role, text) {
-                const msgDiv = document.createElement('div');
-                msgDiv.className = `chat-bubble ${role}`;
-                msgDiv.innerHTML = text.replace(/\n/g, '<br>');
-                chatMessages.appendChild(msgDiv);
-                chatMessages.scrollTop = chatMessages.scrollHeight; // Auto-scroll to bottom
-            }
-
-            // Toggle chat window
-            chatFab.addEventListener('click', () => {
-                chatWindow.classList.toggle('hidden');
-                chatFab.classList.toggle('active');
-
-                // Send welcome message on first open
-                if (!chatWindow.classList.contains('hidden') && chatHistory.length === 0) {
-                    appendMessage('ai', "Hi! ✨ I'm Neil's AI assistant. Ask me anything about his skills, projects, or background!");
-                }
-            });
-
-            // Close chat window
-            closeChatBtn.addEventListener('click', () => {
-                chatWindow.classList.add('hidden');
-                chatFab.classList.remove('active');
-            });
-
-            // Handle sending messages
-            sendChatBtn.addEventListener('click', handleChat);
-            chatInput.addEventListener('keypress', (e) => {
-                if (e.key === 'Enter') handleChat();
-            });
-
-            async function handleChat() {
-                const userText = chatInput.value.trim();
-                if (!userText) return;
-
-                // Show user message
-                appendMessage('user', userText);
-                chatInput.value = '';
-
-                // Add to history
-                chatHistory.push({ role: "user", parts: [{ text: userText }] });
-
-                // Show loading animation
-                const loadingId = 'loading-' + Date.now();
-                const loadingDiv = document.createElement('div');
-                loadingDiv.id = loadingId;
-                loadingDiv.className = `chat-bubble ai`;
-                loadingDiv.innerHTML = `<i class="ph ph-spinner-gap spinning"></i> Thinking...`;
-                chatMessages.appendChild(loadingDiv);
-                chatMessages.scrollTop = chatMessages.scrollHeight;
-
-                try {
-                    // Call Gemini
-                    const result = await callGemini({
-                        systemInstruction: { parts: [{ text: systemInstruction }] },
-                        contents: chatHistory
-                    });
-
-                    // Remove loading animation
-                    document.getElementById(loadingId).remove();
-
-                    // Show AI response
-                    const aiText = result.candidates[0].content.parts[0].text;
-                    appendMessage('ai', aiText);
-
-                    // Add AI response to history
-                    chatHistory.push({ role: "model", parts: [{ text: aiText }] });
-
-                } catch (e) {
-                    if (document.getElementById(loadingId)) document.getElementById(loadingId).remove();
-                    appendMessage('ai', "Oops, my AI connection is down right now. Try again later!");
-                    chatHistory.pop(); // Remove failed user message from history
-                }
-            }
-        }
-    });
+    }
+});
