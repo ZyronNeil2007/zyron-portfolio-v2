@@ -302,38 +302,6 @@ document.addEventListener('DOMContentLoaded', () => {
         window.tiltResizeTimer = setTimeout(applyTiltEffect, 100);
     });
 
-    // --- 9.5. Interactive Hero Image Parallax (Dual-Image Layered Mirage) ---
-    const heroImageCard = document.querySelector('.hero-image-interactive');
-    const heroPortal = document.querySelector('.hero-image-portal');
-
-    if (heroImageCard && heroPortal) {
-        heroImageCard.addEventListener('mousemove', (e) => {
-            const rect = heroImageCard.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-
-            // Normalized percentage from center (-0.5 to 0.5)
-            const xPct = (x / rect.width) - 0.5;
-            const yPct = (y / rect.height) - 0.5;
-
-            // Update CSS variables for shifting and sheen positioning
-            heroImageCard.style.setProperty('--mx', xPct.toFixed(3));
-            heroImageCard.style.setProperty('--my', yPct.toFixed(3));
-
-            // Apply 3D Tilt Effect to the portal card itself
-            const rotateX = yPct * -14; // Max rotation 14deg
-            const rotateY = xPct * 14;  // Max rotation 14deg
-            heroPortal.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
-        });
-
-        heroImageCard.addEventListener('mouseleave', () => {
-            // Smoothly reset variables and transform
-            heroImageCard.style.setProperty('--mx', '0');
-            heroImageCard.style.setProperty('--my', '0');
-            heroPortal.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
-        });
-    }
-
     // --- 10. Anti-Gravity Easter Egg (Matter.js) ---
     const logoContainer = document.querySelector('.logo-container');
     let logoClickCount = 0;
