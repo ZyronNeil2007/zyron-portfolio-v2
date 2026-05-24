@@ -1,35 +1,40 @@
 # 🌟 Zyron Neil Bautista — Personal Portfolio
 
-> A personal portfolio website showcasing my projects, skills, and background as a CS student and creative developer.
-
-![Portfolio Preview](./Gemini_Generated_Image_fnpzccfnpzccfnpz_.png)
+> A personal portfolio website showcasing my projects, skills, and background as a CS student and creative developer — built with **pure HTML, CSS, and JavaScript**.
 
 ---
 
 ## 🔗 Live Site
 
-**[zyron-portfolio-v2](https://zyronneil2007.github.io/zyron-portfolio-v2/)** — hosted on GitHub Pages 
+**[zyronneil2007.github.io/zyron-portfolio-v2](https://zyronneil2007.github.io/zyron-portfolio-v2/)** — hosted on GitHub Pages
 
 ---
 
 ## ✨ Features
 
+### Core
 - **Hero Section** — Animated typewriter effect with a profile image and call-to-action buttons
 - **About Section** — Bento-grid layout with an intro, skills, what I do, and fun facts
-- **Journey Timeline** — An interactive, scrolling timeline outlining my path from 2019 to Present
-- **Skills Progress Bars** — Animated skill level indicators tracking technical proficiency
-- **Projects Section** — Card-based project showcase with tech tags and a category **filtering system**
-- **Visual Design Gallery** — A CSS Masonry grid for pubmats and layouts with an integrated **lightbox**
-- **Case Study Modals** — Clickable project cards that open detailed, frosted-glass modals
-- **Contact Section** — Simple, focused call-to-action with email link
-- **Theme Toggle** — Light/Dark mode with preference persistence via `localStorage`
-- **Liquid Glass 2.0 UI** — High-fidelity Apple-inspired glassmorphism with `backdrop-filter: blur(24px)`, specular edge highlights, and 28px squircle geometry.
-- **Adaptive Theme Glass** — Specialized glass physics for Light Mode (carved/etched look) and Dark Mode (glowing/frosted look).
-- **Scroll Reveal Animations** — Elements animate in using `IntersectionObserver`.
-- **3D Tilt Effect** — Vanilla JS mouse-tracking perspective transforms on bento boxes and project cards.
-- **Matter.js Easter Egg** — A hidden anti-gravity physics simulation (click the logo 3 times to trigger!).
-- **Floating Tab Bar** — Mobile-friendly bottom navigation.
-- **Fully Responsive** — Adapts to mobile, tablet, and desktop viewports.
+- **Journey Timeline** — Interactive vertical timeline from 2019 to Present
+- **Skills Progress Bars** — Animated proficiency indicators across Programming, Web Dev, Tools & Design
+- **Projects Section** — Filterable card-based showcase (Web Dev · Layout & UI · Logic · Research · Business · Presentation)
+- **Visual Design Gallery** — CSS Masonry grid with an integrated lightbox viewer
+- **Case Study Modals** — Clickable project cards that open frosted-glass detail modals
+- **Contact Section** — Email CTA — *"Let's build something great."*
+
+### Design System
+- **Liquid Glass 2.0** — Apple-inspired glassmorphism with `backdrop-filter: blur()`, specular edge highlights, and 28px squircle geometry
+- **Adaptive Theme Glass** — Specialized glass physics for Light Mode (carved/etched) and Dark Mode (glowing/frosted)
+- **Theme Toggle** — Light/Dark mode with `localStorage` persistence
+- **Ambient Background Glows** — Fixed, blurred radial shapes that shift with the active theme
+- **3D Tilt Effect** — Mouse-tracking perspective transforms on bento boxes and project cards
+
+### Interactions
+- **Scroll Reveal Animations** — `IntersectionObserver`-based entrance effects
+- **Matter.js Easter Egg** — Hidden anti-gravity physics simulation (click the logo 3× to trigger!)
+- **Floating Tab Bar** — Apple News-style mobile bottom navigation
+- **Lightbox Gallery** — Click-to-expand image viewer for visual design pieces
+- **Fully Responsive** — Adapts to mobile, tablet, and desktop viewports
 
 ---
 
@@ -42,9 +47,9 @@
 | Logic | Vanilla JavaScript (ES6+) |
 | Physics | [Matter.js](https://brm.io/matter-js/) (CDN) |
 | Icons | [Phosphor Icons](https://phosphoricons.com/) |
-| Fonts | [Inter — Google Fonts](https://fonts.google.com/specimen/Inter) |
+| Fonts | SF Pro (local `@font-face`) |
 
-> No complex frameworks. No build tools. Built with clean, lightweight vanilla web tech.
+> No frameworks. No build tools. Clean, lightweight vanilla web tech.
 
 ---
 
@@ -52,10 +57,20 @@
 
 ```
 my-portfolio/
-├── index.html          # Main HTML — all sections and structure
-├── style.css           # All styles, design tokens, and responsive layout
-├── script.js           # Theme toggle, typewriter, scroll animations, liquid glass
-├── components/         # Additional component assets (if any)
+├── index.html          # All sections and page structure
+├── style.css           # Design tokens, liquid glass system, responsive layout
+├── script.js           # Theme toggle, typewriter, scroll animations, tilt, Matter.js
+├── image/              # Portfolio images, logo, screenshots
+│   ├── logo.png
+│   ├── neil_god.png
+│   ├── minecraft_screenshot.jpg
+│   ├── quiz.png
+│   ├── NOT_FINAL.jpg
+│   ├── get_ready.jpg
+│   ├── me_booth.jpg
+│   ├── Comscie_ID back.svg
+│   └── Comscie_ID front.svg
+├── components/         # Workspace config
 └── README.md           # This file
 ```
 
@@ -63,21 +78,20 @@ my-portfolio/
 
 ## 🎨 Design Highlights
 
-- **Liquid Glass 2.0** — Replaced legacy gradients with high-fidelity backdrop blurs and layered inset box-shadows for realistic specular reflection.
-- **Squircle Geometry** — 28px border-radius applied across all containers for a smooth, premium Apple-like feel.
-- **Theme-Specific Speculars** — Light mode features a "carved" dark specular highlight, while dark mode uses a vibrant white light-catch.
-- **Universal Glass System** — Cohesive styling applied to bento boxes, buttons, pills, tags, and even media screenshots.
-- **Ambient Background Glows** — Fixed, blurred radial shapes that shift based on the current theme.
-- **Dynamic 3D Tilting** — Interactive perspective transforms that respond seamlessly to mouse movement.
+- **Liquid Glass 2.0** — High-fidelity backdrop blurs and layered inset box-shadows for realistic specular reflection
+- **Squircle Geometry** — 28px border-radius across all containers for a smooth, premium Apple-like feel
+- **Theme-Specific Speculars** — Light mode uses a "carved" dark highlight; dark mode uses a vibrant white light-catch
+- **Universal Glass System** — Cohesive styling applied to bento boxes, buttons, pills, tags, and media elements
+- **Ambient Background Glows** — Fixed, blurred radial shapes that shift based on the current theme
+- **Dynamic 3D Tilting** — Interactive perspective transforms responding to mouse movement
 
 ---
 
-## ⚡ Performance Optimizations
+## ⚡ Performance
 
 - Scroll handler throttled via `requestAnimationFrame` (max 60fps)
 - `passive: true` on scroll listeners for compositor-thread scrolling
-- Liquid Glass SVG filters cached in a `Map` — never regenerated for the same dimensions
-- `transform: translateZ(0)` on fixed/glass elements to promote GPU compositor layers
+- `transform: translateZ(0)` on fixed/glass elements for GPU compositing
 - `IntersectionObserver` for scroll-reveal (zero scroll event cost)
 - `will-change` hints on animated elements
 
@@ -89,8 +103,8 @@ my-portfolio/
 |---|---|
 | **Home** | Hero with typewriter intro and profile image |
 | **About** | Who I am, what I do, technical skills, and fun facts |
-| **My Journey** | A vertical scrolling timeline of my tech & creative eras |
-| **Projects** | Filterable portfolio of selected web systems |
+| **My Journey** | Vertical scrolling timeline of my tech & creative eras (2019 → Present) |
+| **Projects** | Filterable portfolio with 6 categories |
 | **Visual Design** | Masonry gallery of posters, pubmats, and layouts |
 | **Contact** | Email CTA — *"Let's build something great."* |
 
@@ -98,7 +112,7 @@ my-portfolio/
 
 ## 🚀 Getting Started
 
-No installation needed. Just open `index.html` in any modern browser:
+No installation required. Just open `index.html` in any modern browser:
 
 ```bash
 # Clone the repository
