@@ -670,34 +670,47 @@ body.dark .btn-secondary.liquid-glass {
 }
 
 /* Hero Section */
+@keyframes heroReveal {
+    from { opacity: 0; transform: translateY(2rem); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
 .hero-section {
-    min-height: 90vh;
+    min-height: 100svh;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-top: 8rem;
-    padding-bottom: 4rem;
+    /* Use equal-ish padding so justify-content:center truly centers content.
+       Top accounts for the fixed navbar (~80px) + breathing room.
+       Bottom accounts for the mobile floating nav (~96px). */
+    padding-top: max(6rem, calc(80px + 1.5rem));
+    padding-bottom: 6rem;
 }
 
 @media (min-width: 768px) {
     .hero-section {
         min-height: 100vh;
-        padding-top: 10rem;
+        padding-top: max(8rem, calc(80px + 2rem));
+        padding-bottom: 4rem;
     }
 }
 
 .hero-content {
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column; /* text first, image second on mobile */
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     gap: 3rem;
     width: 100%;
+    animation: heroReveal 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+    animation-delay: 0.1s;
 }
 
 @media (min-width: 768px) {
     .hero-content {
         flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
         gap: 4rem;
     }
 }
@@ -730,7 +743,7 @@ body.dark .btn-secondary.liquid-glass {
 }
 
 .hero-title {
-    font-size: 2.5rem;
+    font-size: 2.25rem;
     font-weight: 600;
     letter-spacing: -0.05em;
     line-height: 1.1;
@@ -739,19 +752,19 @@ body.dark .btn-secondary.liquid-glass {
 
 @media (min-width: 640px) {
     .hero-title {
-        font-size: 3.75rem;
+        font-size: 3rem;
     }
 }
 
 @media (min-width: 1024px) {
     .hero-title {
-        font-size: 4.5rem;
+        font-size: 3.75rem;
     }
 }
 
 @media (min-width: 1280px) {
     .hero-title {
-        font-size: 6rem;
+        font-size: 4.5rem;
     }
 }
 
@@ -826,17 +839,11 @@ body.dark .btn-secondary.liquid-glass {
 
 .hero-buttons {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     gap: 1rem;
-    align-items: stretch;
-}
-
-@media (min-width: 640px) {
-    .hero-buttons {
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-    }
+    align-items: center;
+    justify-content: center;
 }
 
 @media (min-width: 768px) {

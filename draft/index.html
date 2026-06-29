@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zyron Neil — Portfolio</title>
+  <meta name="description" content="Portfolio of Zyron Neil Bautista — CS student and creative developer specializing in web systems and visual design.">
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="dark">
+
+  <!-- Background -->
+  <div class="bg-canvas">
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+    <div class="bg-orb orb-3"></div>
+    <div class="bg-grid"></div>
+  </div>
+
+  <!-- Navbar -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="#home" class="brand">
+        <span class="brand-mark">Z</span>
+        <span class="brand-name">Neil</span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#journey" class="nav-link">Journey</a></li>
+        <li><a href="#projects" class="nav-link">Work</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+
+      <div class="nav-end">
+        <button id="theme-toggle" aria-label="Toggle theme">
+          <i class="ph ph-moon" id="theme-icon"></i>
+        </button>
+        <a href="#contact" class="nav-cta">Let's talk <i class="ph ph-arrow-up-right"></i></a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Bottom Nav -->
+  <div class="mobile-nav">
+    <div class="mobile-nav-pill">
+      <a href="#home" class="m-nav-link active" data-target="home"><i class="ph ph-house-simple"></i><span>Home</span></a>
+      <a href="#about" class="m-nav-link" data-target="about"><i class="ph ph-user"></i><span>About</span></a>
+      <a href="#projects" class="m-nav-link" data-target="projects"><i class="ph ph-briefcase"></i><span>Work</span></a>
+      <a href="#contact" class="m-nav-link" data-target="contact"><i class="ph ph-envelope"></i><span>Contact</span></a>
+    </div>
+  </div>
+
+  <main>
+    <!-- ── HERO ── -->
+    <section id="home" class="hero">
+      <div class="hero-tag">
+        <i class="ph ph-sparkle"></i>
+        CS Student &amp; Creative Developer
+      </div>
+
+      <h1 class="hero-headline">
+        <span class="hl-top" id="type-line1"></span><br>
+        <span class="hl-mid" id="type-line2"></span>
+        <span class="hl-accent" id="type-line3"></span>
+      </h1>
+
+      <p class="hero-sub">
+        I build functional systems that feel good to use — where clean logic meets intentional design.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#projects" class="btn-primary">View my work <i class="ph ph-arrow-right"></i></a>
+        <a href="#about" class="btn-ghost">About me</a>
+      </div>
+
+      <div class="hero-avatar">
+        <div class="avatar-ring">
+          <div class="avatar-img-wrap">
+            <img src="image/neil_god.png" alt="Zyron Neil Bautista">
+          </div>
+        </div>
+        <div class="avatar-badge"><i class="ph ph-code"></i></div>
+        <div class="avatar-status">
+          <span class="status-dot"></span>
+          Open to collab
+        </div>
+      </div>
+
+      <div class="hero-scroll-hint">
+        <i class="ph ph-arrow-down"></i>
+      </div>
+    </section>
+
+    <!-- ── ABOUT ── -->
+    <section id="about" class="section about-section">
+      <div class="section-label">About</div>
+      <h2 class="section-title">Who I am</h2>
+
+      <div class="about-grid">
+        <!-- Bio -->
+        <div class="about-card card-bio scroll-reveal">
+          <div class="card-eyebrow">Background</div>
+          <p>I'm a passionate Computer Science student who turns ideas into real, working systems. I've spent years finding the intersection of clean code and thoughtful design.</p>
+          <p>My goal is to become a software engineer who builds things that make an impact — not just things that work, but things people enjoy using.</p>
+          <div class="about-social">
+            <a href="https://github.com/ZyronNeil2007" target="_blank" class="social-pill"><i class="ph ph-github-logo"></i> GitHub</a>
+            <a href="mailto:zyronneilbautista10@gmail.com" class="social-pill"><i class="ph ph-envelope"></i> Email</a>
+            <a href="https://www.instagram.com/zyronnei10/" target="_blank" class="social-pill"><i class="ph ph-instagram-logo"></i> Instagram</a>
+          </div>
+        </div>
+
+        <!-- What I Do -->
+        <div class="about-card card-what scroll-reveal" style="transition-delay:.08s">
+          <div class="card-eyebrow">What I Do</div>
+          <ul class="what-list">
+            <li>
+              <div class="what-icon"><i class="ph ph-monitor"></i></div>
+              <div><strong>Web Systems</strong><span>Full-stack development with clean UX</span></div>
+            </li>
+            <li>
+              <div class="what-icon"><i class="ph ph-palette"></i></div>
+              <div><strong>Visual Design</strong><span>Layouts, pubmats, brand identity</span></div>
+            </li>
+            <li>
+              <div class="what-icon"><i class="ph ph-terminal"></i></div>
+              <div><strong>Logic & Algorithms</strong><span>Problem-solving through clean code</span></div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Skills -->
+        <div class="about-card card-skills scroll-reveal" style="transition-delay:.16s">
+          <div class="card-eyebrow">Skills</div>
+          <div class="skills-cols">
+            <div class="skills-col">
+              <div class="skill-group-label">Programming</div>
+              <div class="skill-row"><span>Java</span><div class="bar"><div class="bar-fill" data-w="75"></div></div></div>
+              <div class="skill-row"><span>Python</span><div class="bar"><div class="bar-fill" data-w="80"></div></div></div>
+              <div class="skill-row"><span>C++</span><div class="bar"><div class="bar-fill" data-w="65"></div></div></div>
+            </div>
+            <div class="skills-col">
+              <div class="skill-group-label">Web & Tools</div>
+              <div class="skill-row"><span>HTML/CSS</span><div class="bar"><div class="bar-fill" data-w="85"></div></div></div>
+              <div class="skill-row"><span>JavaScript</span><div class="bar"><div class="bar-fill" data-w="75"></div></div></div>
+              <div class="skill-row"><span>UI Design</span><div class="bar"><div class="bar-fill" data-w="80"></div></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Fun facts -->
+        <div class="about-card card-facts scroll-reveal" style="transition-delay:.24s">
+          <div class="card-eyebrow">Behind the code</div>
+          <div class="facts-wrap">
+            <div class="fact-chip"><i class="ph ph-coffee"></i>Coffee & chill coding</div>
+            <div class="fact-chip"><i class="ph ph-game-controller"></i>Minecraft since 2019</div>
+            <div class="fact-chip"><i class="ph ph-film-strip"></i>Anime & movies</div>
+            <div class="fact-chip"><i class="ph ph-music-notes"></i>Detail-obsessed</div>
+            <div class="fact-chip"><i class="ph ph-pen-nib"></i>TikTok editor era</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── JOURNEY ── -->
+    <section id="journey" class="section journey-section">
+      <div class="section-label">Timeline</div>
+      <h2 class="section-title">My journey</h2>
+      <p class="section-sub">Every skill started as curiosity. Here's the road that got me here.</p>
+
+      <div class="timeline">
+        <div class="tl-spine"></div>
+
+        <div class="tl-item scroll-reveal">
+          <div class="tl-year">2026 – Present</div>
+          <div class="tl-dot active-dot"></div>
+          <div class="tl-card tl-card--accent">
+            <h3>Dream in Progress</h3>
+            <p>Now a Computer Science student, I work with <strong>Python & data mining</strong>, <strong>Java OOP</strong>, and web development. Everything I've learned is converging — becoming a software engineer is no longer a dream, it's the daily work.</p>
+            <div class="tl-tags">
+              <span>Python</span><span>Java OOP</span><span>Web Dev</span><span>Data Mining</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="tl-item scroll-reveal" style="transition-delay:.1s">
+          <div class="tl-year">2025</div>
+          <div class="tl-dot"></div>
+          <div class="tl-card">
+            <h3>Expanding Technical Skills</h3>
+            <p>Explored Computer Engineering concepts and built a deep love for <strong>C++</strong>. Calculus was brutal, but it sharpened my discipline and problem-solving instincts.</p>
+            <div class="tl-tags">
+              <span>C++</span><span>Computer Engineering</span><span>Problem Solving</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="tl-item scroll-reveal" style="transition-delay:.2s">
+          <div class="tl-year">2024</div>
+          <div class="tl-dot"></div>
+          <div class="tl-card">
+            <h3>Real-World Developer Era</h3>
+            <p>Went deep on <strong>.NET NC III</strong> — HTML, CSS, JavaScript, GitHub, databases. Deployed actual web systems used by real students at Barucboc National High School.</p>
+            <div class="tl-tags">
+              <span>.NET NC III</span><span>JavaScript</span><span>GitHub</span><span>Databases</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="tl-item scroll-reveal" style="transition-delay:.3s">
+          <div class="tl-year">2023</div>
+          <div class="tl-dot"></div>
+          <div class="tl-card">
+            <h3>Peak Creativity & Coding Breakthrough</h3>
+            <p>My TikTok editing hit strong engagement. At the same time, <strong>Java NC II</strong> made me realize how much I love building systems. HTML & CSS clicked instantly — programming + design, finally together.</p>
+            <div class="tl-tags">
+              <span>Java NC II</span><span>HTML & CSS</span><span>TikTok Creator</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="tl-item scroll-reveal" style="transition-delay:.4s">
+          <div class="tl-year">2022</div>
+          <div class="tl-dot"></div>
+          <div class="tl-card">
+            <h3>Creative Growth</h3>
+            <p>Became a <strong>layout artist</strong> — posters, pubmats, school publications. Learned how design communicates ideas before a word is read.</p>
+            <div class="tl-tags">
+              <span>Layout Artist</span><span>Pubmats</span><span>Visual Design</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="tl-item scroll-reveal" style="transition-delay:.5s">
+          <div class="tl-year">2020–2021</div>
+          <div class="tl-dot"></div>
+          <div class="tl-card">
+            <h3>Creative Exploration</h3>
+            <p>Started making <strong>anime edits</strong> on CapCut and Alight Motion — where I built the fundamentals of creativity, timing, and visual storytelling.</p>
+            <div class="tl-tags">
+              <span>CapCut</span><span>Alight Motion</span><span>Storytelling</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="tl-item scroll-reveal" style="transition-delay:.6s">
+          <div class="tl-year">2019</div>
+          <div class="tl-dot origin-dot"></div>
+          <div class="tl-card tl-card--origin">
+            <h3>The Spark ✦</h3>
+            <p>It started with <strong>Minecraft servers</strong>. Running plugins, configuring gameplay, wondering how code worked behind the scenes. That curiosity never left.</p>
+            <img src="image/minecraft_screenshot.jpg" alt="Minecraft" class="tl-img">
+            <div class="tl-tags">
+              <span>Minecraft</span><span>Plugins</span><span>Curiosity</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── PROJECTS ── -->
+    <section id="projects" class="section projects-section">
+      <div class="section-label">Work</div>
+      <h2 class="section-title">Selected projects</h2>
+
+      <div class="filter-bar scroll-reveal">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="web-dev">Web Dev</button>
+        <button class="filter-btn" data-filter="layout-ui">Design</button>
+        <button class="filter-btn" data-filter="logic">Logic</button>
+        <button class="filter-btn" data-filter="research">Research</button>
+        <button class="filter-btn" data-filter="business">Business</button>
+        <button class="filter-btn" data-filter="presentation">Presentations</button>
+      </div>
+
+      <div class="projects-grid">
+        <div class="proj-card scroll-reveal" data-category="web-dev logic">
+          <div class="proj-inner">
+            <div class="proj-top">
+              <span class="proj-tag proj-tag--yellow">Web Dev</span>
+              <div class="proj-links">
+                <a href="#" class="proj-icon-link"><i class="ph ph-github-logo"></i></a>
+                <a href="#" class="proj-icon-link"><i class="ph ph-arrow-up-right"></i></a>
+              </div>
+            </div>
+            <h3>BNHS Online Quiz Website</h3>
+            <p>Comprehensive system with admin and student portals, quiz management, results tracking, and built-in feedback.</p>
+            <div class="proj-tech">
+              <span>HTML/CSS/JS</span><span>phpMyAdmin</span><span>Logic Design</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="proj-card scroll-reveal" style="transition-delay:.1s" data-category="web-dev layout-ui">
+          <div class="proj-inner">
+            <div class="proj-top">
+              <span class="proj-tag proj-tag--blue">Web Dev</span>
+              <div class="proj-links">
+                <a href="#" class="proj-icon-link"><i class="ph ph-github-logo"></i></a>
+                <a href="#" class="proj-icon-link"><i class="ph ph-arrow-up-right"></i></a>
+              </div>
+            </div>
+            <h3>School Platform</h3>
+            <p>Fully functional school website tailored for seamless user experience and accessibility across devices.</p>
+            <div class="proj-tech">
+              <span>HTML</span><span>CSS</span><span>JS</span><span>UI/UX</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="proj-card scroll-reveal" style="transition-delay:.2s" data-category="layout-ui business">
+          <div class="proj-inner">
+            <div class="proj-top">
+              <span class="proj-tag proj-tag--orange">🍔 Business</span>
+              <div class="proj-links">
+                <a href="#" class="proj-icon-link"><i class="ph ph-arrow-up-right"></i></a>
+              </div>
+            </div>
+            <h3>Nephricarn Business</h3>
+            <p>A food business concept for students — burgers & guava juice, with branding strategy and product positioning.</p>
+            <div class="proj-tech">
+              <span>Entrepreneurship</span><span>Branding</span><span>Marketing</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="proj-card scroll-reveal" style="transition-delay:.1s" data-category="research">
+          <div class="proj-inner">
+            <div class="proj-top">
+              <span class="proj-tag proj-tag--cyan">📊 Research</span>
+              <div class="proj-links">
+                <a href="#" class="proj-icon-link"><i class="ph ph-arrow-up-right"></i></a>
+              </div>
+            </div>
+            <h3>BNHS Study — Online Quiz Research</h3>
+            <p>Research on <em>Effectiveness of Online Quiz Website for Grade 11 Students</em> — structured data collection & analysis.</p>
+            <div class="proj-tech">
+              <span>Research</span><span>Data Analysis</span><span>Education</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="proj-card scroll-reveal" style="transition-delay:.2s" data-category="layout-ui">
+          <div class="proj-inner">
+            <div class="proj-top">
+              <span class="proj-tag proj-tag--purple">🎨 Design</span>
+              <div class="proj-links">
+                <a href="#" class="proj-icon-link"><i class="ph ph-arrow-up-right"></i></a>
+              </div>
+            </div>
+            <h3>Layout & Design Portfolio</h3>
+            <p>Posters, logos, and publication layouts — visual hierarchy, typography, and branding for school publications and competitions.</p>
+            <div class="proj-tech">
+              <span>Graphic Design</span><span>Layout Artist</span><span>Branding</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="proj-card scroll-reveal" style="transition-delay:.3s" data-category="presentation">
+          <div class="proj-inner">
+            <div class="proj-top">
+              <span class="proj-tag proj-tag--green">📑 Presentation</span>
+              <div class="proj-links">
+                <a href="#" class="proj-icon-link"><i class="ph ph-arrow-up-right"></i></a>
+              </div>
+            </div>
+            <h3>Research & Business Presentations</h3>
+            <p>Structured slides for research defense and business proposals — clarity, visual appeal, and effective communication.</p>
+            <div class="proj-tech">
+              <span>Presentation</span><span>Visual Design</span><span>Academic</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── GALLERY ── -->
+    <section id="designs" class="section gallery-section">
+      <div class="section-label">Gallery</div>
+      <h2 class="section-title">Visual design</h2>
+      <div class="masonry">
+        <div class="masonry-item"><img src="image/quiz.png" alt="Quiz Website Design"></div>
+        <div class="masonry-item"><img src="image/NOT_FINAL.jpg" alt="Design Work"></div>
+        <div class="masonry-item"><img src="image/get_ready.jpg" alt="Creative Design"></div>
+        <div class="masonry-item"><img src="image/me_booth.jpg" alt="Photo at Booth"></div>
+      </div>
+    </section>
+
+    <!-- ── CONTACT ── -->
+    <section id="contact" class="section contact-section">
+      <div class="contact-inner scroll-reveal">
+        <div class="contact-glyph"><i class="ph ph-hand-waving"></i></div>
+        <h2>Let's build something <em>great.</em></h2>
+        <p>Open to collaborations, internships, and projects that push boundaries. Reach out — I'd love to connect.</p>
+        <a href="mailto:zyronneilbautista10@gmail.com" class="btn-primary btn-large">
+          Say hello <i class="ph ph-paper-plane-tilt"></i>
+        </a>
+        <div class="contact-links">
+          <a href="https://github.com/ZyronNeil2007" target="_blank"><i class="ph ph-github-logo"></i></a>
+          <a href="https://www.facebook.com/share/18ZFsaeo4S/" target="_blank"><i class="ph ph-facebook-logo"></i></a>
+          <a href="https://www.instagram.com/zyronnei10/" target="_blank"><i class="ph ph-instagram-logo"></i></a>
+          <a href="https://www.tiktok.com/@zyron_neil" target="_blank"><i class="ph ph-tiktok-logo"></i></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-inner">
+      <span class="footer-brand">Zyron Neil Bautista</span>
+      <span class="footer-copy">© <span id="year"></span> Designed & Developed</span>
+      <div class="footer-links">
+        <a href="mailto:zyronneilbautista10@gmail.com"><i class="ph ph-envelope"></i></a>
+        <a href="https://github.com/ZyronNeil2007" target="_blank"><i class="ph ph-github-logo"></i></a>
+        <a href="https://www.instagram.com/zyronnei10/" target="_blank"><i class="ph ph-instagram-logo"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox">
+    <button class="lb-close"><i class="ph ph-x"></i></button>
+    <img id="lb-img" src="" alt="">
+  </div>
+
+  <!-- Project Modal -->
+  <div id="proj-modal" class="proj-modal">
+    <div class="proj-modal-box">
+      <button class="proj-modal-close"><i class="ph ph-x"></i></button>
+      <div id="modal-body"></div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

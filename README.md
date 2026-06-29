@@ -1,5 +1,8 @@
 # 🌟 Zyron Neil Bautista — Personal Portfolio
 
+![Version](https://img.shields.io/badge/version-v2.0.0-blue.svg)
+![Build](https://img.shields.io/badge/build-passing-success.svg)
+
 > A personal portfolio website showcasing my projects, skills, and background as a CS student and creative developer — built with **pure HTML, CSS, and JavaScript**.
 
 ---

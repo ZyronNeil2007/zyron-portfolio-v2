@@ -1,0 +1,15 @@
+{
+  "name": "neils-portfolio",
+  "version": "2.0.0",
+  "description": "Portfolio of Zyron Neil Bautista \u2014 CS student and creative developer specializing in web systems and visual design.",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ZyronNeil2007/my-portfolio.git"
+  },
+  "author": "Zyron Neil Bautista",
+  "license": "MIT"
+}
