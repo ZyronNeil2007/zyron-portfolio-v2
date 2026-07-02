@@ -1,77 +1,7 @@
 /* style.css */
 
-/* ===== San Francisco Pro Fonts (github.com/sahibjotsaggu/San-Francisco-Pro-Fonts) ===== */
-@font-face {
-    font-family: 'SF Pro Text';
-    src: url('https://cdn.jsdelivr.net/gh/sahibjotsaggu/San-Francisco-Pro-Fonts@master/SF-Pro-Text-Light.otf') format('opentype');
-    font-weight: 300;
-    font-style: normal;
-    font-display: swap;
-}
-@font-face {
-    font-family: 'SF Pro Text';
-    src: url('https://cdn.jsdelivr.net/gh/sahibjotsaggu/San-Francisco-Pro-Fonts@master/SF-Pro-Text-Regular.otf') format('opentype');
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-}
-@font-face {
-    font-family: 'SF Pro Text';
-    src: url('https://cdn.jsdelivr.net/gh/sahibjotsaggu/San-Francisco-Pro-Fonts@master/SF-Pro-Text-Medium.otf') format('opentype');
-    font-weight: 500;
-    font-style: normal;
-    font-display: swap;
-}
-@font-face {
-    font-family: 'SF Pro Text';
-    src: url('https://cdn.jsdelivr.net/gh/sahibjotsaggu/San-Francisco-Pro-Fonts@master/SF-Pro-Text-Semibold.otf') format('opentype');
-    font-weight: 600;
-    font-style: normal;
-    font-display: swap;
-}
-@font-face {
-    font-family: 'SF Pro Text';
-    src: url('https://cdn.jsdelivr.net/gh/sahibjotsaggu/San-Francisco-Pro-Fonts@master/SF-Pro-Text-Bold.otf') format('opentype');
-    font-weight: 700;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'SF Pro Display';
-    src: url('https://cdn.jsdelivr.net/gh/sahibjotsaggu/San-Francisco-Pro-Fonts@master/SF-Pro-Display-Light.otf') format('opentype');
-    font-weight: 300;
-    font-style: normal;
-    font-display: swap;
-}
-@font-face {
-    font-family: 'SF Pro Display';
-    src: url('https://cdn.jsdelivr.net/gh/sahibjotsaggu/San-Francisco-Pro-Fonts@master/SF-Pro-Display-Regular.otf') format('opentype');
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-}
-@font-face {
-    font-family: 'SF Pro Display';
-    src: url('https://cdn.jsdelivr.net/gh/sahibjotsaggu/San-Francisco-Pro-Fonts@master/SF-Pro-Display-Medium.otf') format('opentype');
-    font-weight: 500;
-    font-style: normal;
-    font-display: swap;
-}
-@font-face {
-    font-family: 'SF Pro Display';
-    src: url('https://cdn.jsdelivr.net/gh/sahibjotsaggu/San-Francisco-Pro-Fonts@master/SF-Pro-Display-Semibold.otf') format('opentype');
-    font-weight: 600;
-    font-style: normal;
-    font-display: swap;
-}
-@font-face {
-    font-family: 'SF Pro Display';
-    src: url('https://cdn.jsdelivr.net/gh/sahibjotsaggu/San-Francisco-Pro-Fonts@master/SF-Pro-Display-Bold.otf') format('opentype');
-    font-weight: 700;
-    font-style: normal;
-    font-display: swap;
-}
+/* ===== Premium Google Fonts: Outfit (display/headings) + DM Sans (body) ===== */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap');
 
 
 :root {
@@ -150,12 +80,15 @@ html {
 }
 
 body {
-    font-family: 'SF Pro Text', 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: 'DM Sans', system-ui, -apple-system, sans-serif;
     background-color: var(--bg-primary);
     color: var(--text-primary);
-    line-height: 1.5;
+    line-height: 1.6;
     overflow-x: hidden;
     transition: background-color 0.5s ease, color 0.5s ease;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: 'kern' 1, 'liga' 1;
 }
 
 ::selection {
@@ -176,7 +109,7 @@ button {
     background: none;
     border: none;
     cursor: pointer;
-    font-family: inherit;
+    font-family: 'DM Sans', system-ui, sans-serif;
 }
 
 /* Layout */
@@ -314,7 +247,7 @@ body.dark #navbar.liquid-glass {
 .nav-container {
     max-width: 72rem;
     margin: 0 auto;
-    padding: 0 1rem;
+    padding: 0.625rem 1rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -322,13 +255,13 @@ body.dark #navbar.liquid-glass {
 
 @media (min-width: 768px) {
     .nav-container {
-        padding: 0 1.5rem;
+        padding: 0.625rem 1.5rem;
     }
 }
 
 @media (min-width: 1024px) {
     .nav-container {
-        padding: 0 2rem;
+        padding: 0.625rem 2rem;
     }
 }
 
@@ -373,9 +306,10 @@ body.dark #navbar.liquid-glass {
 }
 
 .logo-text {
-    font-size: 1.25rem;
-    font-weight: 600;
-    letter-spacing: -0.025em;
+    font-family: 'Outfit', system-ui, sans-serif;
+    font-size: 1.125rem;
+    font-weight: 700;
+    letter-spacing: -0.03em;
 }
 
 .desktop-menu {
@@ -392,10 +326,11 @@ body.dark #navbar.liquid-glass {
 }
 
 .nav-link {
+    font-family: 'DM Sans', system-ui, sans-serif;
     color: var(--text-secondary);
     font-size: 0.875rem;
-    font-weight: 400;
-    letter-spacing: 0.025em;
+    font-weight: 500;
+    letter-spacing: 0.01em;
     transition: all 0.3s ease;
 }
 
@@ -446,8 +381,10 @@ body.dark #navbar.liquid-glass {
     border-radius: 9999px;
     background-color: var(--text-primary);
     color: var(--bg-primary);
+    font-family: 'DM Sans', system-ui, sans-serif;
     font-weight: 600;
     font-size: 0.875rem;
+    letter-spacing: 0.01em;
     transition: all 0.3s ease;
 }
 
@@ -527,8 +464,10 @@ body.dark .btn-primary.liquid-glass {
     padding: 0.75rem 1.5rem;
     border-radius: 9999px;
     color: var(--text-primary);
+    font-family: 'DM Sans', system-ui, sans-serif;
     font-weight: 500;
     font-size: 0.875rem;
+    letter-spacing: 0.01em;
     transition: all 0.3s ease;
 }
 
@@ -676,13 +615,12 @@ body.dark .btn-secondary.liquid-glass {
 }
 
 .hero-section {
+    position: relative;
+    overflow: hidden;
     min-height: 100svh;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /* Use equal-ish padding so justify-content:center truly centers content.
-       Top accounts for the fixed navbar (~80px) + breathing room.
-       Bottom accounts for the mobile floating nav (~96px). */
     padding-top: max(6rem, calc(80px + 1.5rem));
     padding-bottom: 6rem;
 }
@@ -700,7 +638,7 @@ body.dark .btn-secondary.liquid-glass {
     flex-direction: column; /* text first, image second on mobile */
     align-items: center;
     justify-content: center;
-    gap: 3rem;
+    gap: 1.5rem;
     width: 100%;
     animation: heroReveal 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
     animation-delay: 0.1s;
@@ -731,40 +669,44 @@ body.dark .btn-secondary.liquid-glass {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    padding: 0.375rem 1rem;
+    padding: 0.375rem 1.1rem;
     border-radius: 9999px;
     border: 1px solid var(--border-color);
     background-color: var(--bg-secondary);
     color: var(--accent-hover);
-    font-weight: 500;
-    font-size: 0.875rem;
+    font-family: 'DM Sans', system-ui, sans-serif;
+    font-weight: 600;
+    font-size: 0.8rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
     margin-bottom: 2rem;
     box-shadow: var(--shadow-sm);
 }
 
 .hero-title {
-    font-size: 2.25rem;
-    font-weight: 600;
-    letter-spacing: -0.05em;
-    line-height: 1.1;
+    font-family: 'Outfit', system-ui, sans-serif;
+    font-size: 2.5rem;
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    line-height: 1.05;
     margin-bottom: 1.5rem;
 }
 
 @media (min-width: 640px) {
     .hero-title {
-        font-size: 3rem;
+        font-size: 3.25rem;
     }
 }
 
 @media (min-width: 1024px) {
     .hero-title {
-        font-size: 3.75rem;
+        font-size: 4.25rem;
     }
 }
 
 @media (min-width: 1280px) {
     .hero-title {
-        font-size: 4.5rem;
+        font-size: 5rem;
     }
 }
 
@@ -819,15 +761,15 @@ body.dark .btn-secondary.liquid-glass {
 }
 
 .hero-desc {
-    font-size: 1rem;
+    font-size: 1.05rem;
     color: var(--text-secondary);
     margin-bottom: 2.5rem;
     max-width: 36rem;
     margin-left: auto;
     margin-right: auto;
-    line-height: 1.625;
-    letter-spacing: 0.025em;
-    font-weight: 300;
+    line-height: 1.75;
+    letter-spacing: 0.01em;
+    font-weight: 400;
 }
 
 @media (min-width: 768px) {
@@ -968,15 +910,16 @@ body.dark .btn-secondary.liquid-glass {
 }
 
 .section-header h2 {
+    font-family: 'Outfit', system-ui, sans-serif;
     font-size: 1.875rem;
-    font-weight: 600;
-    letter-spacing: -0.025em;
+    font-weight: 800;
+    letter-spacing: -0.04em;
     white-space: nowrap;
 }
 
 @media (min-width: 640px) {
     .section-header h2 {
-        font-size: 2.25rem;
+        font-size: 2.5rem;
     }
 }
 
@@ -1027,8 +970,10 @@ body.dark .btn-secondary.liquid-glass {
 }
 
 .bento-box h3 {
+    font-family: 'Outfit', system-ui, sans-serif;
     font-size: 1.25rem;
-    font-weight: 500;
+    font-weight: 700;
+    letter-spacing: -0.03em;
     margin-bottom: 1rem;
 }
 
@@ -1040,15 +985,15 @@ body.dark .btn-secondary.liquid-glass {
 
 .intro-box p {
     color: var(--text-secondary);
-    line-height: 1.625;
+    line-height: 1.8;
     font-size: 1rem;
-    font-weight: 300;
+    font-weight: 400;
     margin-bottom: 1.5rem;
 }
 
 @media (min-width: 640px) {
     .intro-box p {
-        font-size: 1.125rem;
+        font-size: 1.05rem;
     }
 }
 
@@ -1125,8 +1070,10 @@ body.dark .btn-secondary.liquid-glass {
 }
 
 .skill-header h4 {
-    font-weight: 500;
-    font-size: 1rem;
+    font-family: 'Outfit', system-ui, sans-serif;
+    font-weight: 700;
+    font-size: 0.95rem;
+    letter-spacing: -0.02em;
 }
 
 .skill-list {
@@ -1151,12 +1098,15 @@ body.dark .btn-secondary.liquid-glass {
     font-size: 0.875rem;
     font-weight: 500;
     color: var(--text-secondary);
+    letter-spacing: 0.005em;
 }
 
 .skill-percent {
+    font-family: 'Outfit', system-ui, sans-serif;
     font-size: 0.75rem;
-    font-weight: 600;
+    font-weight: 700;
     color: var(--accent);
+    letter-spacing: 0.02em;
 }
 
 .progress-bar {
@@ -1169,12 +1119,12 @@ body.dark .btn-secondary.liquid-glass {
 
 .progress-fill {
     height: 100%;
-    background: linear-gradient(90deg, var(--accent) 0%, var(--accent-hover) 100%);
+    background: linear-gradient(90deg, var(--accent-hover) 0%, var(--accent) 60%, color-mix(in srgb, var(--accent) 70%, white) 100%);
     border-radius: 9999px;
     transform-origin: left;
     transform: scaleX(0);
-    transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
-    box-shadow: 0 0 10px var(--accent-glow);
+    transition: transform 1.4s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 0 12px var(--accent-glow);
 }
 
 .skills-box.visible .progress-fill {
@@ -1262,10 +1212,12 @@ body.dark .btn-secondary.liquid-glass {
     box-shadow: var(--fake-glass-shadow);
     border-radius: 9999px;
     padding: 0.45rem 1.25rem;
-    font-size: 0.9rem;
-    font-weight: 600;
+    font-family: 'DM Sans', system-ui, sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
     color: var(--accent);
-    letter-spacing: 0.04em;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
     margin-bottom: 0.9rem;
 }
 
@@ -1275,11 +1227,11 @@ body.dark .btn-secondary.liquid-glass {
 
 .journey-intro>p {
     color: var(--text-secondary);
-    font-size: 1rem;
-    font-weight: 300;
+    font-size: 1.05rem;
+    font-weight: 400;
     max-width: 34rem;
     margin: 0 auto;
-    line-height: 1.65;
+    line-height: 1.75;
 }
 
 /* ── Spine ── */
@@ -1425,9 +1377,10 @@ body.dark .btn-secondary.liquid-glass {
     display: inline-flex;
     align-items: center;
     gap: 0.4rem;
-    font-size: 0.7rem;
+    font-family: 'DM Sans', system-ui, sans-serif;
+    font-size: 0.65rem;
     font-weight: 700;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
     color: var(--text-tertiary);
     background-color: var(--bg-tertiary);
@@ -1445,9 +1398,10 @@ body.dark .btn-secondary.liquid-glass {
 
 /* ── Title ── */
 .tl-title {
+    font-family: 'Outfit', system-ui, sans-serif;
     font-size: 1.1rem;
-    font-weight: 600;
-    letter-spacing: -0.02em;
+    font-weight: 700;
+    letter-spacing: -0.03em;
     margin-bottom: 0.6rem;
     color: var(--text-primary);
     line-height: 1.3;
@@ -1461,16 +1415,16 @@ body.dark .btn-secondary.liquid-glass {
 
 /* ── Body ── */
 .tl-body {
-    font-size: 0.85rem;
+    font-size: 0.875rem;
     color: var(--text-secondary);
-    line-height: 1.7;
-    font-weight: 300;
+    line-height: 1.8;
+    font-weight: 400;
     margin-bottom: 1rem;
 }
 
 .tl-body strong {
     color: var(--text-primary);
-    font-weight: 500;
+    font-weight: 600;
 }
 
 /* ── Tags ── */
@@ -1576,14 +1530,16 @@ body.dark .btn-secondary.liquid-glass {
 .project-badge {
     padding: 0.25rem 1rem;
     border-radius: 9999px;
-    font-size: 0.625rem;
-    font-weight: 500;
-    letter-spacing: 0.025em;
+    font-family: 'DM Sans', system-ui, sans-serif;
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
 }
 
 @media (min-width: 640px) {
     .project-badge {
-        font-size: 0.75rem;
+        font-size: 0.7rem;
         padding: 0.375rem 1rem;
     }
 }
@@ -1640,16 +1596,17 @@ body.dark .btn-secondary.liquid-glass {
 }
 
 .project-title {
-    font-size: 1.25rem;
-    font-weight: 600;
+    font-family: 'Outfit', system-ui, sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
     margin-bottom: 0.75rem;
-    letter-spacing: -0.025em;
+    letter-spacing: -0.04em;
     transition: color 0.3s ease;
 }
 
 @media (min-width: 640px) {
     .project-title {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
     }
 }
 
@@ -1659,9 +1616,9 @@ body.dark .btn-secondary.liquid-glass {
 
 .project-desc {
     color: var(--text-secondary);
-    font-size: 0.75rem;
-    line-height: 1.625;
-    font-weight: 300;
+    font-size: 0.8125rem;
+    line-height: 1.75;
+    font-weight: 400;
     margin-bottom: 2rem;
     flex-grow: 1;
 }
@@ -1734,21 +1691,23 @@ body.dark .btn-secondary.liquid-glass {
 }
 
 .contact-title {
-    font-size: 2.5rem;
-    font-weight: 600;
+    font-family: 'Outfit', system-ui, sans-serif;
+    font-size: 2.75rem;
+    font-weight: 800;
     letter-spacing: -0.05em;
     margin-bottom: 1.5rem;
+    line-height: 1.05;
 }
 
 @media (min-width: 640px) {
     .contact-title {
-        font-size: 3rem;
+        font-size: 3.5rem;
     }
 }
 
 @media (min-width: 768px) {
     .contact-title {
-        font-size: 4.5rem;
+        font-size: 5rem;
     }
 }
 
@@ -1760,22 +1719,22 @@ body.dark .btn-secondary.liquid-glass {
 .contact-desc {
     color: var(--text-secondary);
     font-size: 1rem;
-    line-height: 1.625;
-    font-weight: 300;
+    line-height: 1.8;
+    font-weight: 400;
     max-width: 42rem;
     margin: 0 auto 2rem;
 }
 
 @media (min-width: 640px) {
     .contact-desc {
-        font-size: 1.125rem;
+        font-size: 1.1rem;
         margin-bottom: 3rem;
     }
 }
 
 @media (min-width: 768px) {
     .contact-desc {
-        font-size: 1.25rem;
+        font-size: 1.2rem;
     }
 }
 
@@ -1823,15 +1782,18 @@ footer {
 }
 
 .footer-logo span {
-    font-weight: 500;
-    letter-spacing: -0.025em;
+    font-family: 'Outfit', system-ui, sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    font-size: 0.95rem;
 }
 
 .footer-text {
     color: var(--text-secondary);
-    font-size: 0.875rem;
-    font-weight: 300;
+    font-size: 0.8125rem;
+    font-weight: 400;
     text-align: center;
+    letter-spacing: 0.01em;
 }
 
 @media (min-width: 768px) {
@@ -2242,7 +2204,8 @@ body.dark .chat-header { background: rgba(255,255,255,0.05); }
     border-radius: 1rem;
     font-size: 0.875rem;
     max-width: 85%;
-    line-height: 1.4;
+    line-height: 1.6;
+    letter-spacing: 0.005em;
 }
 
 .chat-bubble.user {
@@ -2292,3 +2255,497 @@ body.dark .chat-header { background: rgba(255,255,255,0.05); }
 
 #send-chat-btn:hover { transform: scale(1.1); }
 
+
+/* ============================================================
+   HERO SECTION REDESIGN — New Rich Elements
+   ============================================================ */
+
+/* --- Grid Overlay --- */
+.hero-grid-overlay {
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+    background-size: 64px 64px;
+    pointer-events: none;
+    z-index: 0;
+    mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 100%);
+    -webkit-mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 100%);
+}
+
+body:not(.dark) .hero-grid-overlay {
+    background-image:
+        linear-gradient(rgba(0,0,0,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,0,0,0.04) 1px, transparent 1px);
+}
+
+/* --- Ambient orbs (hero-specific, different from bg-glow) --- */
+.hero-ambient-orb {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+    filter: blur(70px);
+}
+
+.orb-a {
+    width: 45vw;
+    height: 45vw;
+    top: -10%;
+    right: -5%;
+    background: radial-gradient(circle, rgba(250,204,21,0.18) 0%, transparent 70%);
+    animation: heroOrbDrift 9s ease-in-out infinite;
+}
+
+.orb-b {
+    width: 35vw;
+    height: 35vw;
+    bottom: 0%;
+    left: -5%;
+    background: radial-gradient(circle, rgba(99,102,241,0.14) 0%, transparent 70%);
+    animation: heroOrbDrift 12s ease-in-out infinite reverse;
+}
+
+.orb-c {
+    width: 28vw;
+    height: 28vw;
+    top: 40%;
+    left: 30%;
+    background: radial-gradient(circle, rgba(244,63,94,0.08) 0%, transparent 70%);
+    animation: heroOrbDrift 15s ease-in-out infinite 3s;
+}
+
+@keyframes heroOrbDrift {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    33%       { transform: translate(25px, -18px) scale(1.06); }
+    66%       { transform: translate(-18px, 14px) scale(0.96); }
+}
+
+/* Make sure content is above the overlays */
+.hero-content,
+.hero-scroll-cue {
+    position: relative;
+    z-index: 2;
+}
+
+/* --- Availability Badge --- */
+.hero-availability {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.4rem 1rem;
+    background: rgba(34, 197, 94, 0.1);
+    border: 1px solid rgba(34, 197, 94, 0.3);
+    border-radius: 9999px;
+    font-family: 'DM Sans', system-ui, sans-serif;
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: #22c55e;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    width: fit-content;
+}
+
+.avail-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #22c55e;
+    flex-shrink: 0;
+    animation: availPulse 2.2s ease infinite;
+}
+
+@keyframes availPulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(34,197,94,0.5); }
+    50%       { box-shadow: 0 0 0 7px rgba(34,197,94,0); }
+}
+
+/* --- Tech Stack Row --- */
+.hero-tech-row {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.hero-tech-label {
+    font-family: 'DM Sans', system-ui, sans-serif;
+    font-size: 0.68rem;
+    font-weight: 700;
+    color: var(--text-tertiary);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    flex-shrink: 0;
+}
+
+.hero-tech-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+}
+
+.hero-tech-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    padding: 0.28rem 0.7rem;
+    font-family: 'DM Sans', system-ui, sans-serif;
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    border-radius: 9999px;
+    cursor: default;
+    transition: all 0.25s ease;
+}
+
+.hero-tech-pill i {
+    font-size: 0.85rem;
+}
+
+.hero-tech-pill:hover {
+    color: var(--accent);
+    transform: translateY(-2px);
+}
+
+/* --- Stats Row --- */
+.hero-stats-row {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.hero-stat {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+}
+
+.hero-stat-num {
+    font-family: 'Outfit', system-ui, sans-serif;
+    font-size: 1.8rem;
+    font-weight: 800;
+    line-height: 1;
+    color: var(--accent);
+    letter-spacing: -0.04em;
+    filter: drop-shadow(0 0 14px var(--accent-glow));
+}
+
+.hero-stat-lbl {
+    font-family: 'DM Sans', system-ui, sans-serif;
+    font-size: 0.65rem;
+    font-weight: 600;
+    color: var(--text-tertiary);
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+}
+
+.hero-stat-sep {
+    width: 1px;
+    height: 2.75rem;
+    background: var(--border-color);
+    flex-shrink: 0;
+}
+
+/* --- Social Quick Links --- */
+.hero-socials {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-top: 1.75rem;
+}
+
+.hero-socials-label {
+    font-family: 'DM Sans', system-ui, sans-serif;
+    font-size: 0.68rem;
+    font-weight: 700;
+    color: var(--text-tertiary);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-right: 0.2rem;
+}
+
+.hero-social-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 50%;
+    color: var(--text-secondary);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.hero-social-btn:hover {
+    color: var(--accent);
+    transform: translateY(-3px) scale(1.15);
+}
+
+/* --- Image Column (larger to accommodate floating cards) --- */
+.image-column {
+    position: relative;
+    width: 16rem;
+    height: 16rem;
+    flex-shrink: 0;
+    margin: 0 auto;
+}
+
+@media (min-width: 640px) {
+    .image-column {
+        width: 22rem;
+        height: 22rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .image-column {
+        width: 26rem;
+        height: 26rem;
+        margin: 0;
+    }
+}
+
+@media (min-width: 1024px) {
+    .image-column {
+        width: 32rem;
+        height: 32rem;
+    }
+}
+
+/* --- Hero Image Scene Container --- */
+.hero-img-scene {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Ensure image-wrapper is sized relative to the scene */
+.hero-img-scene .image-wrapper {
+    position: relative;
+    width: 65%;
+    height: 65%;
+    z-index: 5;
+}
+
+/* On mobile: fill more of the column since floating cards are hidden */
+@media (max-width: 639px) {
+    .hero-img-scene .image-wrapper {
+        width: 85%;
+        height: 85%;
+    }
+
+    /* Tighter column on small screens */
+    .image-column {
+        width: 13rem;
+        height: 13rem;
+    }
+}
+
+/* --- Animated Decorative Rings --- */
+.h-ring {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.h-ring-1 {
+    width: 82%;
+    height: 82%;
+    border: 1px solid rgba(250,204,21,0.18);
+    animation: hRingSpin 18s linear infinite;
+}
+
+.h-ring-2 {
+    width: 100%;
+    height: 100%;
+    border: 1px dashed rgba(250,204,21,0.10);
+    animation: hRingSpin 28s linear infinite reverse;
+}
+
+.h-ring-3 {
+    width: 118%;
+    height: 118%;
+    border: 1px solid rgba(250,204,21,0.05);
+    animation: hRingSpin 40s linear infinite;
+}
+
+@keyframes hRingSpin {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+}
+
+/* Hide rings on mobile (too busy) */
+@media (max-width: 639px) {
+    .h-ring { display: none; }
+}
+
+/* --- Floating Skill Cards --- */
+.h-float-card {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.55rem 1rem;
+    border-radius: 1rem !important;
+    font-family: 'DM Sans', system-ui, sans-serif;
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    z-index: 10;
+    white-space: nowrap;
+    pointer-events: none;
+    letter-spacing: 0.01em;
+}
+
+.h-float-card i {
+    font-size: 1rem;
+    color: var(--accent);
+    flex-shrink: 0;
+}
+
+/* Positions */
+.h-fc-1 {
+    top: 8%;
+    right: 0%;
+    animation: hFloatA 6s ease-in-out infinite;
+}
+
+.h-fc-2 {
+    bottom: 12%;
+    right: -2%;
+    animation: hFloatB 7.5s ease-in-out infinite;
+}
+
+.h-fc-3 {
+    top: 22%;
+    left: 0%;
+    animation: hFloatC 8.5s ease-in-out infinite;
+}
+
+@keyframes hFloatA {
+    0%, 100% { transform: translateY(0) rotate(-2deg); }
+    50%       { transform: translateY(-14px) rotate(1.5deg); }
+}
+
+@keyframes hFloatB {
+    0%, 100% { transform: translateY(0) rotate(2.5deg); }
+    50%       { transform: translateY(-11px) rotate(-1deg); }
+}
+
+@keyframes hFloatC {
+    0%, 100% { transform: translateY(0) rotate(-1deg); }
+    50%       { transform: translateY(-16px) rotate(2deg); }
+}
+
+/* Hide floating cards on small mobile */
+@media (max-width: 639px) {
+    .h-float-card { display: none; }
+}
+
+/* --- Accent Orbit Dots --- */
+.h-dot {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 6;
+}
+
+.h-dot-1 {
+    width: 10px;
+    height: 10px;
+    background: var(--accent);
+    box-shadow: 0 0 14px var(--accent-glow);
+    top: 12%;
+    left: 38%;
+    animation: hDotPop 5s ease-in-out infinite;
+}
+
+.h-dot-2 {
+    width: 7px;
+    height: 7px;
+    background: #a78bfa;
+    box-shadow: 0 0 10px rgba(167,139,250,0.5);
+    top: 55%;
+    right: 6%;
+    animation: hDotPop 7s ease-in-out infinite 1s;
+}
+
+.h-dot-3 {
+    width: 9px;
+    height: 9px;
+    background: var(--accent);
+    box-shadow: 0 0 12px var(--accent-glow);
+    bottom: 18%;
+    left: 8%;
+    animation: hDotPop 9s ease-in-out infinite 2s;
+}
+
+@keyframes hDotPop {
+    0%, 100% { transform: scale(1); opacity: 0.9; }
+    50%       { transform: scale(1.5); opacity: 0.5; }
+}
+
+/* --- Scroll Cue Indicator --- */
+.hero-scroll-cue {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.45rem;
+    opacity: 0;
+    animation: scrollCueFadeIn 0.8s ease 3s forwards;
+}
+
+@keyframes scrollCueFadeIn {
+    to { opacity: 1; }
+}
+
+.scroll-cue-text {
+    font-family: 'DM Sans', system-ui, sans-serif;
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--text-tertiary);
+}
+
+.scroll-cue-track {
+    width: 1.5px;
+    height: 3rem;
+    background: var(--border-color);
+    border-radius: 9999px;
+    overflow: hidden;
+    position: relative;
+}
+
+.scroll-cue-runner {
+    width: 100%;
+    height: 45%;
+    background: linear-gradient(to bottom, var(--accent), transparent);
+    border-radius: 9999px;
+    position: absolute;
+    top: -45%;
+    animation: scrollCueDrop 1.8s cubic-bezier(0.4,0,0.2,1) infinite;
+}
+
+@keyframes scrollCueDrop {
+    0%   { top: -45%; opacity: 1; }
+    80%  { opacity: 1; }
+    100% { top: 145%; opacity: 0; }
+}
+
+/* Hide scroll cue on mobile (no room) */
+@media (max-width: 767px) {
+    .hero-scroll-cue { display: none; }
+}

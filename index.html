@@ -7,9 +7,19 @@
     <title>Neil's Portfolio</title>
     <meta name="description"
         content="Portfolio of Zyron Neil Bautista — CS student and creative developer specializing in web systems and visual design.">
+    <!-- Preconnect for Google Fonts (Outfit + DM Sans) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <noscript>
+        <style>
+            .scroll-reveal {
+                opacity: 1 !important;
+                transform: none !important;
+            }
+        </style>
+    </noscript>
     <!-- Phosphor Icons -->
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
-    <!-- SF Pro Fonts loaded via @font-face in style.css -->
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="bronze-Photoroom.png">
 </head>
@@ -43,7 +53,6 @@
                     <button id="theme-toggle" class="liquid-glass" aria-label="Toggle Theme">
                         <i class="ph ph-moon" id="theme-icon"></i>
                     </button>
-                    <a href="#contact" class="btn-primary desktop-only liquid-glass">Let's Talk</a>
                 </div>
             </div>
         </nav>
@@ -70,33 +79,72 @@
                         <span>Contact</span>
                     </a>
                 </div>
-                <button class="nav-fab liquid-glass" aria-label="Search">
-                    <i class="ph ph-magnifying-glass"></i>
-                </button>
             </div>
         </div>
 
         <main>
             <!-- Hero Section -->
             <section id="home" class="hero-section">
+                <!-- Decorative background elements -->
+                <div class="hero-grid-overlay"></div>
+                <div class="hero-ambient-orb orb-a"></div>
+                <div class="hero-ambient-orb orb-b"></div>
+                <div class="hero-ambient-orb orb-c"></div>
+
                 <div class="hero-content">
+                    <!-- ── Text Column ── -->
                     <div class="text-column">
-                        <div class="frosted-tag liquid-glass">
-                            <i class="ph ph-sparkle"></i>
-                            <span>CS Student &amp; Creative Developer</span>
+
+                        <!-- Availability badge -->
+                        <div class="hero-availability">
+                            <span class="avail-dot"></span>
+                            <span>Open to Opportunities</span>
                         </div>
 
+                        <!-- Heading -->
                         <h1 class="hero-title">
-                            <span class="line1" id="type-line1"></span><br class="desktop-break">
-                            <span class="line2" id="type-line2"></span><br class="desktop-break">
-                            <span class="line3" id="type-line3"></span>
+                            <span class="line1" id="type-line1">Hi, I'm Zyron </span><br class="desktop-break">
+                            <span class="line2" id="type-line2">I blend code with </span><br class="desktop-break">
+                            <span class="line3" id="type-line3">design.</span>
                         </h1>
 
+                        <!-- Description -->
                         <p class="hero-desc">
                             I specialize in building functional systems while making them visually engaging and
                             user-friendly. I believe technology should not only work well but also feel good to use.
                         </p>
 
+                        <!-- Tech stack pills -->
+                        <div class="hero-tech-row">
+                            <span class="hero-tech-label">Stack</span>
+                            <div class="hero-tech-pills">
+                                <span class="hero-tech-pill liquid-glass"><i class="ph ph-file-html"></i>HTML</span>
+                                <span class="hero-tech-pill liquid-glass"><i class="ph ph-paint-brush"></i>CSS</span>
+                                <span class="hero-tech-pill liquid-glass"><i class="ph ph-lightning"></i>JS</span>
+                                <span class="hero-tech-pill liquid-glass"><i class="ph ph-snake"></i>Python</span>
+                                <span class="hero-tech-pill liquid-glass"><i class="ph ph-coffee"></i>Java</span>
+                            </div>
+                        </div>
+
+                        <!-- Stats -->
+                        <div class="hero-stats-row">
+                            <div class="hero-stat">
+                                <span class="hero-stat-num">6+</span>
+                                <span class="hero-stat-lbl">Projects</span>
+                            </div>
+                            <div class="hero-stat-sep"></div>
+                            <div class="hero-stat">
+                                <span class="hero-stat-num">3+</span>
+                                <span class="hero-stat-lbl">Years Learning</span>
+                            </div>
+                            <div class="hero-stat-sep"></div>
+                            <div class="hero-stat">
+                                <span class="hero-stat-num">5+</span>
+                                <span class="hero-stat-lbl">Technologies</span>
+                            </div>
+                        </div>
+
+                        <!-- Buttons -->
                         <div class="hero-buttons">
                             <a href="#projects" class="btn-primary liquid-glass">
                                 View Projects <i class="ph ph-arrow-up-right"></i>
@@ -105,20 +153,62 @@
                                 Learn More
                             </a>
                         </div>
+
+                        <!-- Social quick links -->
+                        <div class="hero-socials">
+                            <span class="hero-socials-label">Find me</span>
+                            <a href="https://github.com/ZyronNeil2007" target="_blank" rel="noopener noreferrer" class="hero-social-btn liquid-glass" aria-label="GitHub"><i class="ph ph-github-logo"></i></a>
+                            <a href="https://www.facebook.com/share/18ZFsaeo4S/" target="_blank" rel="noopener noreferrer" class="hero-social-btn liquid-glass" aria-label="Facebook"><i class="ph ph-facebook-logo"></i></a>
+                            <a href="https://www.instagram.com/zyronnei10/" target="_blank" rel="noopener noreferrer" class="hero-social-btn liquid-glass" aria-label="Instagram"><i class="ph ph-instagram-logo"></i></a>
+                            <a href="mailto:zyronneilbautista10@gmail.com" class="hero-social-btn liquid-glass" aria-label="Email"><i class="ph ph-envelope"></i></a>
+                        </div>
                     </div>
 
+                    <!-- ── Image Column ── -->
                     <div class="image-column">
-                        <div class="image-wrapper group">
-                            <div class="image-glow"></div>
-                            <div class="image-frame liquid-glass">
-                                <div class="image-container">
-                                    <img src="image/neil_god.png" alt="Zyron Neil Bautista">
+                        <div class="hero-img-scene">
+                            <!-- Animated decorative rings -->
+                            <div class="h-ring h-ring-1"></div>
+                            <div class="h-ring h-ring-2"></div>
+                            <div class="h-ring h-ring-3"></div>
+
+                            <!-- Profile image -->
+                            <div class="image-wrapper group">
+                                <div class="image-glow"></div>
+                                <div class="image-frame liquid-glass">
+                                    <div class="image-container">
+                                        <img src="image/neil_god.png" alt="Zyron Neil Bautista">
+                                    </div>
                                 </div>
                             </div>
-                            <div class="floating-badge">
+
+                            <!-- Floating skill cards -->
+                            <div class="h-float-card h-fc-1 liquid-glass">
                                 <i class="ph ph-code"></i>
+                                <span>Web Dev</span>
                             </div>
+                            <div class="h-float-card h-fc-2 liquid-glass">
+                                <i class="ph ph-palette"></i>
+                                <span>UI Design</span>
+                            </div>
+                            <div class="h-float-card h-fc-3 liquid-glass">
+                                <i class="ph ph-graduation-cap"></i>
+                                <span>CS Student</span>
+                            </div>
+
+                            <!-- Accent orbit dots -->
+                            <span class="h-dot h-dot-1"></span>
+                            <span class="h-dot h-dot-2"></span>
+                            <span class="h-dot h-dot-3"></span>
                         </div>
+                    </div>
+                </div>
+
+                <!-- Scroll indicator -->
+                <div class="hero-scroll-cue">
+                    <span class="scroll-cue-text">Scroll</span>
+                    <div class="scroll-cue-track">
+                        <div class="scroll-cue-runner"></div>
                     </div>
                 </div>
             </section>
@@ -604,7 +694,8 @@
                             </div>
                             <h3 class="project-title">BNHS Study – Online Quiz Research</h3>
                             <p class="project-desc">A research study titled <em>"Effectiveness of Online Quiz Website to
-                                Grade 11 Students"</em>. Evaluated how an online quiz system impacts student learning,
+                                    Grade 11 Students"</em>. Evaluated how an online quiz system impacts student
+                                learning,
                                 accessibility, and performance using structured data collection and analysis.</p>
                             <div class="project-tech">
                                 <span class="tech-tag liquid-glass">#Research</span>
@@ -675,7 +766,21 @@
                     <div class="masonry-item liquid-glass"><img src="image/NOT_FINAL.jpg" alt="Design 2"></div>
                     <div class="masonry-item liquid-glass"><img src="image/get_ready.jpg" alt="Design 3"></div>
                     <div class="masonry-item liquid-glass"><img src="image/me_booth.jpg" alt="Design 4"></div>
-                </div>
+                    <div class="masonry-item liquid-glass"><img src="image/" alt="Design 5"></div>
+                    <div class="masonry-item liquid-glass"><img
+                            src="image/“One Year, One Vision, Endless Innovation”.png" alt="Design 6"></div>
+                    <div class="masonry-item liquid-glass"><img src="image/Add a heading.png" alt="Design 7"></div>
+                    <div class="masonry-item liquid-glass"><img src="image/Araw ng Bading.jpg" alt="Design 8"></div>
+                    <div class="masonry-item liquid-glass"><img src="image/bitch.png" alt="Design 9"></div>
+                    <div class="masonry-item liquid-glass"><img src="image/Frame 1.png" alt="Design 10"></div>
+                    <div class="masonry-item liquid-glass"><img src="image/Heroes Day.jpg" alt="Design 11"></div>
+                    <div class="masonry-item liquid-glass"><img src="image/National Press.jpg" alt="Design 12"></div>
+                    <div class="masonry-item liquid-glass"><img src="image/out of idea bitch.png" alt="Design 13"></div>
+                    <div class="masonry-item liquid-glass"><img src="image/PAWWARAGI- Spornnts.png" alt="Design 14">
+                    </div>
+                    <div class="masonry-item liquid-glass"><img src="image/Sports Pubmat.png" alt="Design 15"></div>
+                    <div class="masonry-item liquid-glass"><img src="image/teachers day.png" alt="Design 15"></div
+                        </div>
             </section>
 
             <!-- Contact Section -->
@@ -710,7 +815,8 @@
                 </div>
 
                 <p class="footer-text">
-                    © <span id="year"></span> Designed &amp; Developed by Zyron Neil. <span class="footer-version">| v2.0.0</span>
+                    © <span id="year"></span> Designed &amp; Developed by Zyron Neil. <span class="footer-version">|
+                        v2.0.0</span>
                 </p>
 
                 <div class="social-links">

@@ -121,6 +121,8 @@ document.addEventListener('DOMContentLoaded', () => {
     function handleScroll() {
         const scrollY = window.scrollY;
 
+        navbar.classList.toggle('scrolled', scrollY > 50);
+
         // Active section detection — read only, no writes in loop
         let currentSection = 'home';
         const half = window.innerHeight / 2;
@@ -266,6 +268,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
         tiltElements.forEach(el => {
             el.classList.add('tilt-element');
+
+            if (el.dataset.tiltAttached) return;
+            el.dataset.tiltAttached = 'true';
 
             el.addEventListener('mousemove', (e) => {
                 const rect = el.getBoundingClientRect();
@@ -463,5 +468,29 @@ document.addEventListener('DOMContentLoaded', () => {
         // Bonus visual feedback
         const bgGlows = document.querySelectorAll('.bg-glow');
         bgGlows.forEach(glow => glow.style.filter = 'hue-rotate(90deg) blur(24px)');
+
+        // Reset Button
+        const resetBtn = document.createElement('button');
+        resetBtn.textContent = 'Reset Gravity';
+        resetBtn.style.position = 'fixed';
+        resetBtn.style.bottom = '2rem';
+        resetBtn.style.left = '50%';
+        resetBtn.style.transform = 'translateX(-50%)';
+        resetBtn.style.zIndex = '10000';
+        resetBtn.style.padding = '0.75rem 1.5rem';
+        resetBtn.style.borderRadius = '9999px';
+        resetBtn.style.background = 'var(--accent)';
+        resetBtn.style.color = '#000';
+        resetBtn.style.fontWeight = 'bold';
+        resetBtn.style.border = 'none';
+        resetBtn.style.cursor = 'pointer';
+        resetBtn.style.boxShadow = '0 10px 25px var(--accent-glow)';
+        resetBtn.addEventListener('click', () => window.location.reload());
+        document.body.appendChild(resetBtn);
     }
+
+    // --- 11. Prevent Default on Placeholder Links ---
+    document.querySelectorAll('a[href="#"]').forEach(link => {
+        link.addEventListener('click', e => e.preventDefault());
+    });
 });
