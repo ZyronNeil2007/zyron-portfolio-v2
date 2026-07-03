@@ -1,7 +1,7 @@
 # Issue Tracking & Templates
 
 ## Version References
-Current Version: **v2.0.0**
+Current Version: **v2.0.1**
 
 ---
 
@@ -32,6 +32,17 @@ A clear and concise description of what the problem is. Ex. I'm always frustrate
 
 **Describe the solution you'd like:**
 A clear and concise description of what you want to happen.
+
+---
+
+## ✅ Closed Issues (v2.0.1)
+
+This version bump formalizes the `v2.0.1` patch which includes UI/UX refinements for the hero section.
+
+### Resolved Items
+- **Fixed:** Removed the "Open to Opportunities" availability badge from the hero section.
+- **Fixed:** Reordered the hero layout on mobile to display the profile image above the text.
+- **Fixed:** Redesigned the profile image on mobile with a glowing accent ring and better scaling for small screens.
 
 ---
 
