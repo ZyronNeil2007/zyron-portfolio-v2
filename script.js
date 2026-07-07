@@ -494,3 +494,99 @@ document.addEventListener('DOMContentLoaded', () => {
         link.addEventListener('click', e => e.preventDefault());
     });
 });
+
+// --- 12. GSAP Enhancements (Magnetic Cursor + Parallax) ---
+// Wrapped in window load to ensure GSAP scripts are ready (they're deferred)
+window.addEventListener('load', () => {
+    // Respect prefers-reduced-motion — skip all GSAP if user prefers less motion
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    if (typeof gsap === 'undefined') return;
+
+    // ── 12a. Magnetic Cursor on Hero CTA Buttons ──
+    // UI/UX Pro Max: Hover Micro-interaction (Complex tier, elastic.out)
+    const magneticTargets = document.querySelectorAll('.btn-primary, .btn-secondary');
+
+    magneticTargets.forEach(el => {
+        // Only apply on non-touch devices
+        if (!window.matchMedia('(hover: hover)').matches) return;
+
+        const xTo = gsap.quickTo(el, 'x', { duration: 0.45, ease: 'elastic.out(1, 0.4)' });
+        const yTo = gsap.quickTo(el, 'y', { duration: 0.45, ease: 'elastic.out(1, 0.4)' });
+
+        el.addEventListener('mousemove', (e) => {
+            const r = el.getBoundingClientRect();
+            // Pull strength clamped to 0.3 so element never fully leaves its hit box
+            xTo((e.clientX - r.left - r.width / 2) * 0.3);
+            yTo((e.clientY - r.top - r.height / 2) * 0.3);
+        });
+
+        el.addEventListener('mouseleave', () => {
+            // Snap back with the same elastic spring
+            xTo(0);
+            yTo(0);
+        });
+    });
+
+    // ── 12b. Multi-Layer Hero Ambient Orb Parallax ──
+    // UI/UX Pro Max: Parallax Scroll (Standard tier, scrub: 0.5)
+    if (typeof ScrollTrigger !== 'undefined') {
+        gsap.registerPlugin(ScrollTrigger);
+
+        const orbA = document.querySelector('.hero-ambient-orb.orb-a');
+        const orbB = document.querySelector('.hero-ambient-orb.orb-b');
+        const orbC = document.querySelector('.hero-ambient-orb.orb-c');
+        const heroSection = document.querySelector('.hero-section');
+
+        if (orbA && heroSection) {
+            gsap.to(orbA, {
+                yPercent: -12,
+                ease: 'none',
+                scrollTrigger: {
+                    trigger: heroSection,
+                    scrub: 0.5,
+                    start: 'top top',
+                    end: 'bottom top',
+                }
+            });
+        }
+        if (orbB && heroSection) {
+            gsap.to(orbB, {
+                yPercent: -18,
+                ease: 'none',
+                scrollTrigger: {
+                    trigger: heroSection,
+                    scrub: 0.8,
+                    start: 'top top',
+                    end: 'bottom top',
+                }
+            });
+        }
+        if (orbC && heroSection) {
+            gsap.to(orbC, {
+                yPercent: -8,
+                ease: 'none',
+                scrollTrigger: {
+                    trigger: heroSection,
+                    scrub: 1,
+                    start: 'top top',
+                    end: 'bottom top',
+                }
+            });
+        }
+
+        // ── 12c. Hero floating cards subtle parallax ──
+        const floatCards = document.querySelectorAll('.h-float-card');
+        floatCards.forEach((card, i) => {
+            gsap.to(card, {
+                yPercent: (i + 1) * -6,
+                ease: 'none',
+                scrollTrigger: {
+                    trigger: heroSection,
+                    scrub: 0.4 + i * 0.2,
+                    start: 'top top',
+                    end: 'bottom top',
+                }
+            });
+        });
+    }
+});

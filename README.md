@@ -1,6 +1,6 @@
 # 🌟 Zyron Neil Bautista — Personal Portfolio
 
-![Version](https://img.shields.io/badge/version-v2.0.1-blue.svg)
+![Version](https://img.shields.io/badge/version-v2.1.0-blue.svg)
 ![Build](https://img.shields.io/badge/build-passing-success.svg)
 
 > A personal portfolio website showcasing my projects, skills, and background as a CS student and creative developer — built with **pure HTML, CSS, and JavaScript**.
@@ -33,11 +33,18 @@
 - **3D Tilt Effect** — Mouse-tracking perspective transforms on bento boxes and project cards
 
 ### Interactions
+- **GSAP Magnetic Cursor** — Elastic hover micro-interactions on CTA buttons
+- **Multi-Layer Parallax** — Scroll-scrubbed parallax on hero ambient orbs and floating skill cards
 - **Scroll Reveal Animations** — `IntersectionObserver`-based entrance effects
 - **Matter.js Easter Egg** — Hidden anti-gravity physics simulation (click the logo 3× to trigger!)
 - **Floating Tab Bar** — Apple News-style mobile bottom navigation
 - **Lightbox Gallery** — Click-to-expand image viewer for visual design pieces
 - **Fully Responsive** — Adapts to mobile, tablet, and desktop viewports
+
+### Accessibility & Performance
+- **Keyboard Navigation** — "Skip to main content" link for keyboard users
+- **Reduced Motion Support** — Full CSS/JS compliance with OS-level `prefers-reduced-motion` settings
+- **GPU Compositing** — `will-change: transform` hints and `font-display: swap` for optimal loading and smooth 60fps rendering
 
 ---
 
@@ -49,6 +56,7 @@
 | Styling | Vanilla CSS (custom properties, CSS Grid, Flexbox) |
 | Logic | Vanilla JavaScript (ES6+) |
 | Physics | [Matter.js](https://brm.io/matter-js/) (CDN) |
+| Animation | [GSAP & ScrollTrigger](https://greensock.com/gsap/) (CDN) |
 | Icons | [Phosphor Icons](https://phosphoricons.com/) |
 | Fonts | SF Pro (local `@font-face`) |
 

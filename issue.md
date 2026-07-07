@@ -1,7 +1,7 @@
 # Issue Tracking & Templates
 
 ## Version References
-Current Version: **v2.0.1**
+Current Version: **v2.1.0**
 
 ---
 
@@ -32,6 +32,20 @@ A clear and concise description of what the problem is. Ex. I'm always frustrate
 
 **Describe the solution you'd like:**
 A clear and concise description of what you want to happen.
+
+---
+
+## ✅ Closed Issues (v2.1.0)
+
+This version bump (v2.1.0) integrates comprehensive UI/UX audit enhancements, focusing on advanced GSAP animations and accessibility fixes.
+
+### Resolved Items
+- **Feature:** Added GSAP and ScrollTrigger for complex animations.
+- **Feature:** Implemented magnetic cursor on primary CTA buttons.
+- **Feature:** Added multi-layer parallax scrolling to hero ambient orbs and floating skill cards.
+- **Fix (Accessibility):** Implemented a "Skip to main content" link for keyboard users.
+- **Fix (Accessibility):** Ensured full `prefers-reduced-motion` compliance across all CSS and JS animations.
+- **Optimization:** Added `will-change: transform` to heavily animated elements for GPU compositing.
 
 ---
 

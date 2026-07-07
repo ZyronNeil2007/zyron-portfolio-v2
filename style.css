@@ -3,6 +3,31 @@
 /* ===== Premium Google Fonts: Outfit (display/headings) + DM Sans (body) ===== */
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap');
 
+/* Skip Link — keyboard accessibility (UI/UX Pro Max: High severity fix) */
+.skip-link {
+    position: fixed;
+    top: -100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--accent, #facc15);
+    color: #000;
+    padding: 0.6rem 1.5rem;
+    border-radius: 0 0 1rem 1rem;
+    font-family: 'DM Sans', system-ui, sans-serif;
+    font-weight: 700;
+    font-size: 0.875rem;
+    z-index: 99999;
+    transition: top 0.2s ease;
+    text-decoration: none;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+}
+
+.skip-link:focus {
+    top: 0;
+    outline: 3px solid currentColor;
+    outline-offset: 2px;
+}
+
 
 :root {
     /* Light Theme Variables */
@@ -386,6 +411,8 @@ body.dark #navbar.liquid-glass {
     font-size: 0.875rem;
     letter-spacing: 0.01em;
     transition: all 0.3s ease;
+    will-change: transform; /* GPU compositing for magnetic cursor */
+    cursor: pointer;
 }
 
 .btn-primary:hover {
@@ -469,6 +496,8 @@ body.dark .btn-primary.liquid-glass {
     font-size: 0.875rem;
     letter-spacing: 0.01em;
     transition: all 0.3s ease;
+    will-change: transform; /* GPU compositing for magnetic cursor */
+    cursor: pointer;
 }
 
 .btn-secondary.liquid-glass {
@@ -623,6 +652,42 @@ body.dark .btn-secondary.liquid-glass {
     justify-content: center;
     padding-top: max(6rem, calc(80px + 1.5rem));
     padding-bottom: 6rem;
+}
+
+/* Hero decorative orbs — GPU compositing for GSAP parallax */
+.hero-ambient-orb {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+    will-change: transform; /* enables GPU compositing for ScrollTrigger scrub */
+    z-index: 0;
+}
+
+.orb-a {
+    width: 45vw;
+    height: 45vw;
+    top: -10%;
+    left: -10%;
+    background: radial-gradient(circle, var(--accent-glow, rgba(250,204,21,0.15)) 0%, transparent 70%);
+    filter: blur(40px);
+}
+
+.orb-b {
+    width: 35vw;
+    height: 35vw;
+    top: 20%;
+    right: -5%;
+    background: radial-gradient(circle, rgba(99,102,241,0.12) 0%, transparent 70%);
+    filter: blur(50px);
+}
+
+.orb-c {
+    width: 30vw;
+    height: 30vw;
+    bottom: 0;
+    left: 30%;
+    background: radial-gradient(circle, rgba(244,63,94,0.10) 0%, transparent 70%);
+    filter: blur(45px);
 }
 
 @media (min-width: 768px) {
@@ -1899,19 +1964,52 @@ footer {
     }
 }
 
-/* Respect reduced-motion preference */
+/* Respect reduced-motion preference (UI/UX Pro Max: full compliance) */
 @media (prefers-reduced-motion: reduce) {
+    /* Kill all CSS animation durations globally */
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.1ms !important;
+        scroll-behavior: auto !important;
+    }
+
+    /* Scroll reveal: show immediately, no transform */
     .scroll-reveal {
-        transition: opacity 0.3s ease !important;
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+    }
+
+    /* Hide ambient decorative elements that pulse/float */
+    .bg-glow,
+    .hero-ambient-orb,
+    .h-dot,
+    .h-ring,
+    .scroll-cue-runner {
+        animation: none !important;
+        opacity: 0.4;
+    }
+
+    /* Hero entrance: show immediately */
+    .hero-content {
+        animation: none !important;
+        opacity: 1 !important;
         transform: none !important;
     }
 
-    .bg-glow {
-        display: none;
+    /* Stop typing cursor blink */
+    .typing-cursor.blinking {
+        animation: none !important;
+        opacity: 1 !important;
     }
 
-    * {
-        animation-duration: 0.01ms !important;
+    /* Magnetic cursor: disable will-change to free GPU */
+    .btn-primary,
+    .btn-secondary {
+        will-change: auto !important;
     }
 }
 

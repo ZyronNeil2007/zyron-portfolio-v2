@@ -20,11 +20,16 @@
     </noscript>
     <!-- Phosphor Icons -->
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <!-- GSAP + ScrollTrigger for advanced animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="bronze-Photoroom.png">
 </head>
 
 <body class="dark">
+    <!-- Skip to main content (keyboard accessibility) -->
+    <a href="#main" class="skip-link">Skip to main content</a>
     <div class="app-container">
         <!-- Background Ambient Glows -->
         <div class="bg-glow glow-1"></div>
@@ -82,7 +87,7 @@
             </div>
         </div>
 
-        <main>
+        <main id="main">
             <!-- Hero Section -->
             <section id="home" class="hero-section">
                 <!-- Decorative background elements -->
