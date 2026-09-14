@@ -1,4 +1,4 @@
-# 🌟 Zyron Neil Bautista — Personal Portfolio
+# 🌟 Neil Bautista — Personal Portfolio
 
 ![Version](https://img.shields.io/badge/version-v2.1.0-blue.svg)
 ![Build](https://img.shields.io/badge/build-passing-success.svg)
